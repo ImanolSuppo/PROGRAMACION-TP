@@ -1,5 +1,5 @@
-﻿using CarpinteriaApp.datos.Interfaz;
-using CarpinteriaApp.dominio;
+﻿using SistemaAcademico.datos.Interfaz;
+using SistemaAcademico.Dominio;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -12,40 +12,90 @@ namespace SistemaAcademico.datos.Implementacion
 {
     public class PresupuestoDao : IDaoPresupuesto
     {
-        public int ObtenerProximoNro()
+        private static PresupuestoDao instancia;
+        private SqlConnection cnn;
+        public PresupuestoDao()
         {
-            string sp = "SP_PROXIMO_ID";
-            return HelperDB.ObtenerInstancia().ConsultaEscalarSQL(sp, "@next");
+            cnn = new SqlConnection(""); //AREGLAR CADENA
+        }
+        public static IDaoPresupuesto ObtenerInstancia() //PROBLEMA CON EL SINGLETON
+        {
+            if (instancia == null)
+                instancia = new PresupuestoDao();
+            return instancia;
+        }
+        public int ObtenerProximoNro(string SP)
+        {
+            cnn.Open();
+            SqlCommand cmd = new SqlCommand(SP, cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlParameter pOut = new SqlParameter();
+            pOut.ParameterName = "@pOutNombre"; //ASIGNAR PARAMETRO
+            pOut.DbType = DbType.Int32;
+            pOut.Direction = ParameterDirection.Output;
+            cmd.Parameters.Add(pOut);
+            cmd.ExecuteNonQuery();
+            cnn.Close();
+
+            return (int)pOut.Value;
         }
 
-        public List<Producto> ObtenerProductos()
+        public DataTable ObtenerCombo(string SP)
         {
-            List<Producto> lst = new List<Producto>();
-
-            string sp = "SP_CONSULTAR_PRODUCTOS";
-            DataTable t = HelperDB.ObtenerInstancia().ConsultaSQL(sp, null);
-
-            foreach (DataRow dr in t.Rows)
-            {
-                //Mapear un registro a un objeto del modelo de dominio
-                int nro = int.Parse(dr["id_producto"].ToString());
-                string nombre = dr["n_producto"].ToString();
-                double precio = double.Parse(dr["precio"].ToString());
-                bool activo = dr["activo"].ToString().Equals("S");
-
-                Producto aux = new Producto(nro, nombre, precio);
-                aux.Activo = activo;
-                lst.Add(aux);
-
-            }
-
-            return lst;
+            DataTable tabla = new DataTable();
+            cnn.Open();
+            SqlCommand cmd = new SqlCommand(SP, cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            tabla.Load(cmd.ExecuteReader());
+            cnn.Close();
+            return tabla;
         }
 
-        public bool Crear(Presupuesto oPresupuesto)
+        public bool AltaLegajo(Alumno alumno)
         {
             bool ok = true;
-            SqlConnection cnn = HelperDB.ObtenerInstancia().ObtenerConexion();
+            SqlTransaction t = null;
+            SqlCommand cmd = new SqlCommand();
+            try
+            {
+                cnn.Open();
+                t = cnn.BeginTransaction();
+                cmd.Connection = cnn;
+                cmd.Transaction = t;
+                cmd.CommandText = "SP";  //ASIGNAR SP
+                cmd.CommandType = CommandType.StoredProcedure;
+                //ASIGNAR PARAMETROS
+                cmd.Parameters.AddWithValue("@parametro", alumno.Legajo);
+                cmd.Parameters.AddWithValue("@parametro", alumno.Persona.Nombre);  
+                cmd.Parameters.AddWithValue("@parametro", alumno.Persona.Apellido);
+                cmd.Parameters.AddWithValue("@parametro", alumno.Persona.Barrio);
+                cmd.Parameters.AddWithValue("@parametro", alumno.Persona.Calle);
+                cmd.Parameters.AddWithValue("@parametro", alumno.Persona.Altura);
+                cmd.Parameters.AddWithValue("@parametro", alumno.Persona.Telefono);
+                cmd.Parameters.AddWithValue("@parametro", alumno.Persona.TipoDocumento);
+                cmd.Parameters.AddWithValue("@parametro", alumno.Persona.Documento);
+
+
+                t.Commit();
+            }
+            catch (Exception)
+            {
+                if (t != null)
+                    t.Rollback();
+                ok = false;
+            }
+            finally
+            {
+
+                if (cnn != null && cnn.State == ConnectionState.Open)
+                    cnn.Close();
+            }
+            return ok;
+        }
+
+        public bool AltaInscripcion(Inscripcion objeto)
+        {
+            bool ok = true;
             SqlTransaction t = null;
             SqlCommand cmd = new SqlCommand();
             try
@@ -55,34 +105,37 @@ namespace SistemaAcademico.datos.Implementacion
                 t = cnn.BeginTransaction();
                 cmd.Connection = cnn;
                 cmd.Transaction = t;
-                cmd.CommandText = "SP_INSERTAR_MAESTRO";
+                cmd.CommandText = "SP";  //ASIGNAR SP
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@cliente", oPresupuesto.Cliente);
-                cmd.Parameters.AddWithValue("@dto", oPresupuesto.Descuento);
-                cmd.Parameters.AddWithValue("@total", oPresupuesto.CalcularTotalConDescuento());
+                cmd.Parameters.AddWithValue("@parametro", objeto.Fecha);
+                cmd.Parameters.AddWithValue("@parametro", objeto.Legajo);  //ASIGNAR PARAMETROS
+                cmd.Parameters.AddWithValue("@parametro", objeto.Curso);
 
                 //parámetro de salida:
                 SqlParameter pOut = new SqlParameter();
-                pOut.ParameterName = "@presupuesto_nro";
+                pOut.ParameterName = "@parametro"; //ASIGNAR PARAMETRO
                 pOut.DbType = DbType.Int32;
                 pOut.Direction = ParameterDirection.Output;
                 cmd.Parameters.Add(pOut);
                 cmd.ExecuteNonQuery();
 
-                int presupuestoNro = (int)pOut.Value;
+                int inscripcionNro = (int)pOut.Value;
 
                 SqlCommand cmdDetalle;
                 int detalleNro = 1;
-                foreach (DetallePresupuesto item in oPresupuesto.Detalles)
+                foreach (DetalleInscripcion item in objeto.DetalleInscripcions)
                 {
-                    cmdDetalle = new SqlCommand("SP_INSERTAR_DETALLE", cnn, t);
+                    cmdDetalle = new SqlCommand("SP", cnn, t); //ASIGNAR SP
                     cmdDetalle.CommandType = CommandType.StoredProcedure;
-                    cmdDetalle.Parameters.AddWithValue("@presupuesto_nro", presupuestoNro);
-                    cmdDetalle.Parameters.AddWithValue("@detalle", detalleNro);
-                    cmdDetalle.Parameters.AddWithValue("@id_producto", item.Producto.ProductoNro);
-                    cmdDetalle.Parameters.AddWithValue("@cantidad", item.Cantidad);
+                    //ASIGNAR PARAMETROS
+                    cmdDetalle.Parameters.AddWithValue("@parametro", inscripcionNro);
+                    cmdDetalle.Parameters.AddWithValue("@parametro", item.Carrera);
+                    cmdDetalle.Parameters.AddWithValue("@parametro", item.Materia);
+                    cmdDetalle.Parameters.AddWithValue("@parametro", item.NotaParcial1);
+                    cmdDetalle.Parameters.AddWithValue("@parametro", item.NotaParcial2);
+                    cmdDetalle.Parameters.AddWithValue("@parametro", item.NotaFinal);
+                    cmdDetalle.Parameters.AddWithValue("@parametro", item.EstadoAcademico);
                     cmdDetalle.ExecuteNonQuery();
-
                     detalleNro++;
                 }
                 t.Commit();
@@ -104,7 +157,12 @@ namespace SistemaAcademico.datos.Implementacion
             return ok;
         }
 
-        public bool Actualizar(Presupuesto oPresupuesto)
+
+
+
+        //TODAVIA NO VAMOS A ACTUALIZAR O BORRAR DATOS
+
+       /* public bool Actualizar(Presupuesto objeto)
         {
             bool ok = true;
             SqlConnection cnn = HelperDB.ObtenerInstancia().ObtenerConexion();
@@ -119,23 +177,13 @@ namespace SistemaAcademico.datos.Implementacion
                 cmd.Transaction = t;
                 cmd.CommandText = "SP_MODIFICAR_MAESTRO";
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@cliente", oPresupuesto.Cliente);
-                cmd.Parameters.AddWithValue("@dto", oPresupuesto.Descuento);
-                cmd.Parameters.AddWithValue("@total", oPresupuesto.CalcularTotalConDescuento());
-                cmd.Parameters.AddWithValue("@presupuesto_nro", oPresupuesto.PresupuestoNro);
+                cmd.Parameters.AddWithValue("@parametro", objeto.Cliente);
                 cmd.ExecuteNonQuery();
 
                 SqlCommand cmdDetalle;
                 int detalleNro = 1;
-                foreach (DetallePresupuesto item in oPresupuesto.Detalles)
+                foreach (Detalle item in objeto.Detalles)
                 {
-                    cmdDetalle = new SqlCommand("SP_INSERTAR_DETALLE", cnn, t);
-                    cmdDetalle.CommandType = CommandType.StoredProcedure;
-                    cmdDetalle.Parameters.AddWithValue("@presupuesto_nro", oPresupuesto.PresupuestoNro);
-                    cmdDetalle.Parameters.AddWithValue("@detalle", detalleNro);
-                    cmdDetalle.Parameters.AddWithValue("@id_producto", item.Producto.ProductoNro);
-                    cmdDetalle.Parameters.AddWithValue("@cantidad", item.Cantidad);
-                    cmdDetalle.ExecuteNonQuery();
 
                     detalleNro++;
                 }
@@ -156,9 +204,9 @@ namespace SistemaAcademico.datos.Implementacion
             }
 
             return ok;
-        }
+        }*/
 
-        public bool Borrar(int nro)
+     /*   public bool Borrar(int nro)
         {
             string sp = "SP_ELIMINAR_PRESUPUESTO";
             List<Parametro> lst = new List<Parametro>();
@@ -167,27 +215,19 @@ namespace SistemaAcademico.datos.Implementacion
             return afectadas > 0;
         }
 
-        public List<Presupuesto> ObtenerPresupuestosPorFiltros(DateTime desde, DateTime hasta, string cliente)
+        public DataTable ObtenerAlumno(string nombre, string apellido, string SP)
         {
-            List<Presupuesto> presupestos = new List<Presupuesto>();
-            string sp = "SP_CONSULTAR_PRESUPUESTOS";
-            List<Parametro> lst = new List<Parametro>();
-            lst.Add(new Parametro("@fecha_desde", desde));
-            lst.Add(new Parametro("@fecha_hasta", hasta));
-            lst.Add(new Parametro("@cliente", cliente));
-            DataTable dt = HelperDB.ObtenerInstancia().ConsultaSQL(sp, lst);
+            DataTable tabla = new DataTable();
 
-            foreach (DataRow row in dt.Rows)
-            {
-                Presupuesto presupuesto = new Presupuesto();
-                presupuesto.Cliente = row["cliente"].ToString();
-                presupuesto.PresupuestoNro = int.Parse(row["presupuesto_nro"].ToString());
-                presupuesto.Fecha = DateTime.Parse(row["fecha"].ToString());
-                presupuesto.Descuento = double.Parse(row["descuento"].ToString());
-                presupestos.Add(presupuesto);
-            }
+            cnn.Open();
+            SqlCommand cmd = new SqlCommand(SP, cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@parametroNombre", nombre);  //INGRESAR PARAMETRO
+            cmd.Parameters.AddWithValue("@parametroApellido", apellido); //INGRESAR PARAMETRO
+            tabla.Load(cmd.ExecuteReader());
+            cnn.Close();
 
-            return presupestos;
+            return tabla;
         }
 
         public DataTable ObtenerReporte(DateTime desde, DateTime hasta)
@@ -230,7 +270,7 @@ namespace SistemaAcademico.datos.Implementacion
             }
 
             return presupuesto;
-        }
+        }*/
     }
 }
 

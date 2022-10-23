@@ -1,4 +1,4 @@
-﻿using CarpinteriaApp.dominio;
+﻿using SistemaAcademico.Dominio;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -10,13 +10,12 @@ namespace SistemaAcademico.datos.Interfaz
 {
     public interface IDaoPresupuesto
     {
-        List<Producto> ObtenerProductos();
-        int ObtenerProximoNro();
-        bool Crear(Presupuesto oPresupuesto);
-        bool Actualizar(Presupuesto oPresupuesto);
-        bool Borrar(int nro);
-        List<Presupuesto> ObtenerPresupuestosPorFiltros(DateTime desde, DateTime hasta, string cliente);
-        Presupuesto ObtenerPresupuestoPorNro(int nro);
-        DataTable ObtenerReporte(DateTime desde, DateTime hasta);
+        IDaoPresupuesto ObtenerInstancia(); //PROBLEMA CON EL SINGLETON
+        int ObtenerProximoNro(string SP);
+        DataTable ObtenerCombo(string SP);
+        bool AltaLegajo(Alumno alumno);
+        bool AltaInscripcion(Inscripcion objeto);
+
+
     }
 }

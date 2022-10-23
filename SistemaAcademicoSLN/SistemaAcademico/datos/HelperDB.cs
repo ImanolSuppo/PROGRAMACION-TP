@@ -1,5 +1,4 @@
-﻿using CarpinteriaApp.dominio;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -18,7 +17,7 @@ namespace SistemaAcademico.datos
 
         private HelperDB()
         {
-            cnn = new SqlConnection(Properties.Resources.cnnString);
+            cnn = new SqlConnection("");
         }
 
         public static HelperDB ObtenerInstancia()

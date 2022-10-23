@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace SistemaAcademico.Dominio
 {
-    internal class Alumno
+    public class Alumno
     {
         public int Legajo { get; set; }
-        public Persona IdPersona { get; set; }
-        public Alumno(int legajo, Persona idPersona)
+        public Persona Persona { get; set; }
+        public Alumno(int legajo, Persona persona)
         {
             Legajo = legajo;
-            IdPersona = idPersona;
+            Persona = persona;
         }
         public Alumno()
         {
             Legajo = 000;
-            IdPersona = new Persona();
+            Persona = new Persona();
         }
     }
 }

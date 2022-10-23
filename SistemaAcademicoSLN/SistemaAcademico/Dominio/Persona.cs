@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SistemaAcademico.Dominio
 {
-    internal class Persona
+    public class Persona
     {
         public int IdPersona { get; set; }
         public string Nombre { get; set; }
