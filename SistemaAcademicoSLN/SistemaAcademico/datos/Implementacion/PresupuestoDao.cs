@@ -16,9 +16,9 @@ namespace SistemaAcademico.datos.Implementacion
         private SqlConnection cnn;
         public PresupuestoDao()
         {
-            cnn = new SqlConnection(""); //AREGLAR CADENA
+            cnn = new SqlConnection(@"Data Source=LAPTOP-QCMCF27P\SQLEXPRESS;Initial Catalog=TP_PROGRAMACION_CARRERAS;Integrated Security=True"); //AREGLAR CADENA
         }
-        public static IDaoPresupuesto ObtenerInstancia() //PROBLEMA CON EL SINGLETON
+        public IDaoPresupuesto ObtenerInstancia() //PROBLEMA CON EL SINGLETON
         {
             if (instancia == null)
                 instancia = new PresupuestoDao();

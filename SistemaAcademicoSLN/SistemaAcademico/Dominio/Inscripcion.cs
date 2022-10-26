@@ -9,20 +9,20 @@ namespace SistemaAcademico.Dominio
     public class Inscripcion
     {
         public List<DetalleInscripcion> DetalleInscripcions { get; set; }
-        public int Legajo { get; set; }
+        public Alumno Alumno { get; set; }
         public DateTime Fecha { get; set; }
         public int Curso { get; set; }
-        public Inscripcion(List<DetalleInscripcion> detalleInscripcions, int legajo, DateTime fecha, int curso)
+        public Inscripcion(List<DetalleInscripcion> detalleInscripcions, Alumno alumno, DateTime fecha, int curso)
         {
             DetalleInscripcions = detalleInscripcions;
-            Legajo = legajo;
+            Alumno = alumno;
             Fecha = fecha;
             Curso = curso;
         }
         public Inscripcion()
         {
             DetalleInscripcions = new List<DetalleInscripcion>();
-            Legajo = 0;
+            Alumno = new Alumno();
             Fecha = DateTime.Now;
             Curso = 0;
         }
