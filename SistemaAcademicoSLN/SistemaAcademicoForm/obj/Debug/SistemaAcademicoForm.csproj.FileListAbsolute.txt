@@ -1,0 +1,12 @@
+C:\Users\imasu\source\repos\SistemaAcademicoSLN\SistemaAcademicoForm\obj\Debug\SistemaAcademicoForm.csproj.AssemblyReference.cache
+C:\Users\imasu\source\repos\SistemaAcademicoSLN\SistemaAcademicoForm\obj\Debug\SistemaAcademicoForm.csproj.SuggestedBindingRedirects.cache
+C:\Users\imasu\source\repos\SistemaAcademicoSLN\SistemaAcademicoForm\obj\Debug\SistemaAcademicoForm.AltaAlumno.resources
+C:\Users\imasu\source\repos\SistemaAcademicoSLN\SistemaAcademicoForm\obj\Debug\SistemaAcademicoForm.Principal.resources
+C:\Users\imasu\source\repos\SistemaAcademicoSLN\SistemaAcademicoForm\obj\Debug\SistemaAcademicoForm.Properties.Resources.resources
+C:\Users\imasu\source\repos\SistemaAcademicoSLN\SistemaAcademicoForm\obj\Debug\SistemaAcademicoForm.csproj.GenerateResource.cache
+C:\Users\imasu\source\repos\SistemaAcademicoSLN\SistemaAcademicoForm\obj\Debug\SistemaAcademicoForm.csproj.CoreCompileInputs.cache
+C:\Users\imasu\source\repos\SistemaAcademicoSLN\SistemaAcademicoForm\bin\Debug\SistemaAcademicoForm.exe.config
+C:\Users\imasu\source\repos\SistemaAcademicoSLN\SistemaAcademicoForm\bin\Debug\SistemaAcademicoForm.exe
+C:\Users\imasu\source\repos\SistemaAcademicoSLN\SistemaAcademicoForm\bin\Debug\SistemaAcademicoForm.pdb
+C:\Users\imasu\source\repos\SistemaAcademicoSLN\SistemaAcademicoForm\obj\Debug\SistemaAcademicoForm.exe
+C:\Users\imasu\source\repos\SistemaAcademicoSLN\SistemaAcademicoForm\obj\Debug\SistemaAcademicoForm.pdb
