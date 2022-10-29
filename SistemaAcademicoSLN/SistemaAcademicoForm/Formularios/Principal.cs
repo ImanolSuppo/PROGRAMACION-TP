@@ -20,8 +20,14 @@ namespace SistemaAcademicoForm
 
         private void nuevoUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AltaAlumno altaAlumno = new AltaAlumno();
+            AltaUsuarios altaAlumno = new AltaUsuarios();
             altaAlumno.ShowDialog();
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Seguro que desea salir?", "CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                this.Close();
         }
     }
 }
