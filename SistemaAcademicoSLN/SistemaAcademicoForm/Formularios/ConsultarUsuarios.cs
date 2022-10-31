@@ -23,11 +23,6 @@ namespace SistemaAcademicoForm.Formularios
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(txtLegajo.Text))
-            {
-                MessageBox.Show("Legajo vacio", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
             if (!int.TryParse(txtLegajo.Text, out _))
             {
                 MessageBox.Show("Solo insertar caracteres numericos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -38,8 +33,13 @@ namespace SistemaAcademicoForm.Formularios
                 MessageBox.Show("Debe especificar si es Alumno o Profesor", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            string condicion = "";
+            if (rdbAlumno.Checked)
+                condicion = "Alumno";
+            else
+                condicion = "Profesor";
             int legajo = Convert.ToInt32(txtLegajo.Text);
-            DataTable table = dao.ConsultarLegajo("SP_CONSULTAR_LEGAJO", legajo); //INSERTAR SP
+            DataTable table = dao.ConsultarLegajo("SP_CONSULTAR_LEGAJO", legajo, condicion); //INSERTAR SP
             dgvLegajo.Rows.Clear();
             foreach (DataRow item in table.Rows)
             {
