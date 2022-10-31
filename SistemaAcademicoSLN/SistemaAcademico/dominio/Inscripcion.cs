@@ -26,5 +26,13 @@ namespace SistemaAcademico.dominio
             Fecha = DateTime.Now;
             Curso = 0;
         }
+        public void AgregarDetalle(DetalleInscripcion detalle)
+        {
+            DetalleInscripcions.Add(detalle);
+        }
+        public void EliminarDetalle(int indice)
+        {
+            DetalleInscripcions.RemoveAt(indice);
+        }
     }
 }
