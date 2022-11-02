@@ -1,3 +1,5 @@
+set dateformat 'DMY'
+go
 create database TP_PROGRAMACION_CARRERAS
 go
 use TP_PROGRAMACION_CARRERAS
@@ -476,7 +478,6 @@ insert into inscripciones (fecha,legajo,curso) values('14/02/2022',113920,2)
 insert into inscripciones (fecha,legajo,curso) values('10/11/2021',113921,2)
 
 
-select* from Estados_Academicos
 ------------------INSERT DETALLE INSCRIPCION [FALTAN]-------------------------------
 insert into Detalle_Inscripciones(id_inscripcion,id_car_mat,nota_parc1,nota_parc2,nota_final,id_est_academico) values(1,1,10,9,9.5,1)
 insert into Detalle_Inscripciones(id_inscripcion,id_car_mat,nota_parc1,nota_parc2,nota_final,id_est_academico) values (1,1,6,6,6,1)
@@ -566,6 +567,7 @@ insert into Detalle_Inscripciones(id_inscripcion,id_car_mat,nota_parc1,nota_parc
 
 ----CREACION DE SP'S---------
 -----------OBTENER PROXIMO LEGAJO----------------
+go
 create procedure SP_proximo_legajo
 @next int output
 as
@@ -574,12 +576,8 @@ set @next = (select max(legajo) + 1 from alumnos)
 end
 
 
-declare @next int
-exec SP_proximo_legajo @next output
-select @next
-
 ---------Crear funcion proximo legajo--------------
-create function f_proximo_legajo
+/*create function f_proximo_legajo
 ()
 returns int
 as 
@@ -589,8 +587,8 @@ set @legajo = (select max(legajo) + 1 from alumnos)
 return @legajo
 end
 
-select dbo.f_proximo_legajo()
-
+select dbo.f_proximo_legajo()*/
+go
 ----------------------------------------------------------------
 ------------INSERTAR USUARIO------------------
 create procedure SP_insertar_usuario
@@ -609,14 +607,17 @@ insert into Personas(nombre,apellido,id_barrio,calle,altura,celular,id_tipo_doc,
 			values(@nombre,@apellido,@id_barrio,@calle,@altura,@telefono,@tipo_doc,@nro_documento)
 	set @id = SCOPE_IDENTITY();
 end
+go
 ------------INSERTAR ALUMNO----------------------
 create procedure SP_insertar_alumno
-@id int
+@id int,
+@legajo int
 as
 begin
 insert into alumnos(legajo,id_persona)
-		values (dbo.f_proximo_legajo(),@id)
+		values (@legajo,@id)
 end
+go
 -----------------------------------------------------
 ------SP CONSULTAR USUARIOS----------
 create proc SP_consultar_usuarios
@@ -648,7 +649,7 @@ if (@condicion = 'Profesor' and @legajo is not null)
 	end	
 end
 
-select * from alumnos
-----------------------------------------------PROCEDURE INSERTAR INSCRIPCION------------------
-create procedure SP_Insertar_Inscripcion ----------PENDIENTE
-
+go
+create proc SP_consultar_carreras
+as
+select * from carreras
