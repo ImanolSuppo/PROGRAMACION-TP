@@ -53,6 +53,7 @@ namespace SistemaAcademicoForm
             txtAltura.Clear();
         }
 
+
         private void cbNoTel_CheckedChanged(object sender, EventArgs e)
         {
             if (cbNoTel.Enabled)
@@ -65,13 +66,45 @@ namespace SistemaAcademicoForm
         }
         public bool Validar() //Mejorar la validacion(que muestre un mensaje por cada problema)
         {
-            if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtNombre.Text))
+            if (string.IsNullOrEmpty(txtNombre.Text))
+            {
+                MessageBox.Show("Debe Ingresar un nombre");
                 return false;
-            if (int.TryParse(txtDoc.Text, out _) || int.TryParse(txtAltura.Text, out _) || int.TryParse(txtTelefono.Text, out _))
+            }
+
+            if (string.IsNullOrEmpty(txtApellido.Text))
+            {
+                MessageBox.Show("Debe ingresar un Apellido");
                 return false;
+            }
+
+            if (string.IsNullOrEmpty(txtTelefono.Text))
+            {
+                MessageBox.Show("Debe ingresar un Telefono");
+                return false;
+            }
+
+            if (int.TryParse(txtDoc.Text, out _))
+            {
+                MessageBox.Show("El documento debe ser numerico");
+                return false;
+            }
+
+            if (int.TryParse(txtAltura.Text, out _))
+            {
+                MessageBox.Show("la altura debe ser numerica");
+                return false;
+            }
+
+            if (int.TryParse(txtTelefono.Text, out _))
+            {
+                MessageBox.Show("El telefono debe ser numerico");
+                return false;
+            }
+
+
             return true;
-        }
-        public bool ExisteLegajo(int legajo)
+            public bool ExisteLegajo(int legajo)
         {
             DataTable table = dao.ConsultarLegajo("", legajo);//Asignar SP
             if (table.Rows.Count > 0)

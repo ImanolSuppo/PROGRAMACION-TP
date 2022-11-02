@@ -40,20 +40,59 @@ namespace SistemaAcademicoForm.Formularios
         {
         }
 
-        public bool Valida()
+        public bool Validar()
         {
-            //validar los campos...
-        }
+            if (string.IsNullOrEmpty(txtCurso.Text))
+            {
+                MessageBox.Show("Debe Ingresar un curso");
+                txtCurso.Focus();
+                return false;
+            }
+            //dtpFecha.Value == DateTime.Now no se si poner esto pq por ahi se inscribe en el dia
+            if (string.IsNullOrEmpty(txtLegajo.Text))
+            {
+                MessageBox.Show("Debe Ingresar un legajo");
+                txtLegajo.Focus();
+                return false;
+            }
+            if (cboCarreraa.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe Ingresar una carrera");
+                cboCarreraa.Focus();
+                return false;
+            }
+            if (cboMateria.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe Ingresar una materia");
+                cboMateria.Focus();
+                return false;
+            }
+            try
+            {
+                int.TryParse(txtLegajo.Text, out _);
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("El legajo debe ser un numero");
+                return false;
+            }
+            return true;
+        }
         public void Clear()
         {
             inscripcion = new Inscripcion(); //Cada vez que se limpie se crea una nueva inscripcion
-            //limpiar los campos...
+            txtCurso.Text = string.Empty;
+            txtLegajo.Text = string.Empty;
+            cboCarreraa.SelectedIndex = -1;
+            cboMateria.SelectedIndex = -1;
+            dtpFecha.Value = DateTime.Now;
+
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (!Valida())
+            if (!Validar())
             {
                 MessageBox.Show("Error, verifique los datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
