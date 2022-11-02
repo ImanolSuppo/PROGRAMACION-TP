@@ -8,13 +8,13 @@ namespace SistemaAcademico.dominio
 {
     public class DetalleInscripcion
     {
-        public int Carrera { get; set; }
-        public int Materia { get; set; }
+        public Carrera Carrera { get; set; }
+        public Materia Materia { get; set; }
         public int NotaParcial1 { get; set; }
         public int NotaParcial2 { get; set; }
         public int NotaFinal { get; set; }
         public int EstadoAcademico { get; set; }
-        public DetalleInscripcion( int carrera, int materia, int notaParcial1, int notaParcial2, int notaFinal, int estadoAcademico)
+        public DetalleInscripcion( Carrera carrera, Materia materia, int notaParcial1, int notaParcial2, int notaFinal, int estadoAcademico)
         {
             Carrera = carrera;
             Materia = materia;
@@ -25,8 +25,8 @@ namespace SistemaAcademico.dominio
         }
         public DetalleInscripcion()
         {
-            Carrera = 0;
-            Materia = 0;
+            Carrera = new Carrera();
+            Materia = new Materia();
             NotaParcial1 = 0;
             NotaParcial2 = 0;
             NotaFinal = 0;

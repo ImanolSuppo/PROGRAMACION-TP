@@ -28,15 +28,40 @@ namespace SistemaAcademico.datos
             return (int)pOut.Value;
         }
 
-        public DataTable ObtenerCombo(string SP)
+        public DataTable ObtenerCombo(string SP, List<Parametro> values)
         {
             DataTable tabla = new DataTable();
             cnn.Open();
             SqlCommand cmd = new SqlCommand(SP, cnn);
             cmd.CommandType = CommandType.StoredProcedure;
+            if (values != null)
+            {
+                foreach (Parametro oParametro in values)
+                {
+                    cmd.Parameters.AddWithValue(oParametro.Clave, oParametro.Valor);
+                }
+            }
             tabla.Load(cmd.ExecuteReader());
             cnn.Close();
             return tabla;
+        }
+
+        public List<Carrera> ObtenerListaCarrera(DataTable table)
+        {
+            List<Carrera> lst = new List<Carrera>();
+            foreach (DataRow dr in table.Rows)
+            {
+                //Mapear un registro a un objeto del modelo de dominio
+                int nro = int.Parse(dr["id_carrera"].ToString());
+                string nombre = dr["nombre"].ToString();
+                int duracion = int.Parse(dr["duracion"].ToString());
+
+                Carrera aux = new Carrera(nro, nombre, duracion);
+                lst.Add(aux);
+
+            }
+
+            return lst;
         }
         public DataTable ConsultarLegajo(string SP, int leg)
         {
