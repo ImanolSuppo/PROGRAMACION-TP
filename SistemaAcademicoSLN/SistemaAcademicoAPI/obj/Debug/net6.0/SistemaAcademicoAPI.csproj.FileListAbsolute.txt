@@ -25,3 +25,38 @@ C:\Users\imasu\source\repos\SistemaAcademicoSLN\SistemaAcademicoAPI\obj\Debug\ne
 C:\Users\imasu\source\repos\SistemaAcademicoSLN\SistemaAcademicoAPI\obj\Debug\net6.0\SistemaAcademicoAPI.pdb
 C:\Users\imasu\source\repos\SistemaAcademicoSLN\SistemaAcademicoAPI\obj\Debug\net6.0\SistemaAcademicoAPI.genruntimeconfig.cache
 C:\Users\imasu\source\repos\SistemaAcademicoSLN\SistemaAcademicoAPI\obj\Debug\net6.0\ref\SistemaAcademicoAPI.dll
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademicoAPI\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademicoAPI\bin\Debug\net6.0\appsettings.json
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademicoAPI\bin\Debug\net6.0\SistemaAcademicoAPI.exe
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademicoAPI\bin\Debug\net6.0\SistemaAcademicoAPI.deps.json
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademicoAPI\bin\Debug\net6.0\SistemaAcademicoAPI.runtimeconfig.json
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademicoAPI\bin\Debug\net6.0\SistemaAcademicoAPI.dll
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademicoAPI\bin\Debug\net6.0\SistemaAcademicoAPI.pdb
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademicoAPI\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademicoAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademicoAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademicoAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademicoAPI\bin\Debug\net6.0\System.Data.SqlClient.dll
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademicoAPI\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademicoAPI\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademicoAPI\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademicoAPI\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademicoAPI\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademicoAPI\bin\Debug\net6.0\SistemaAcademico.dll
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademicoAPI\bin\Debug\net6.0\SistemaAcademico.pdb
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademicoAPI\obj\Debug\net6.0\SistemaAcademicoAPI.csproj.AssemblyReference.cache
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademicoAPI\obj\Debug\net6.0\SistemaAcademicoAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademicoAPI\obj\Debug\net6.0\SistemaAcademicoAPI.AssemblyInfoInputs.cache
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademicoAPI\obj\Debug\net6.0\SistemaAcademicoAPI.AssemblyInfo.cs
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademicoAPI\obj\Debug\net6.0\SistemaAcademicoAPI.csproj.CoreCompileInputs.cache
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademicoAPI\obj\Debug\net6.0\SistemaAcademicoAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademicoAPI\obj\Debug\net6.0\SistemaAcademicoAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademicoAPI\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademicoAPI\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademicoAPI\obj\Debug\net6.0\scopedcss\bundle\SistemaAcademicoAPI.styles.css
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademicoAPI\obj\Debug\net6.0\SistemaAcademicoAPI.csproj.CopyComplete
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademicoAPI\obj\Debug\net6.0\SistemaAcademicoAPI.dll
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademicoAPI\obj\Debug\net6.0\refint\SistemaAcademicoAPI.dll
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademicoAPI\obj\Debug\net6.0\SistemaAcademicoAPI.pdb
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademicoAPI\obj\Debug\net6.0\SistemaAcademicoAPI.genruntimeconfig.cache
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademicoAPI\obj\Debug\net6.0\ref\SistemaAcademicoAPI.dll
