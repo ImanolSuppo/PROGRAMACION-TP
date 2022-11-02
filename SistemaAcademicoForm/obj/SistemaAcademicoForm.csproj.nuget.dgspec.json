@@ -1,0 +1,129 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\killb\\Desktop\\Progra 2\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademicoForm\\SistemaAcademicoForm.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\killb\\Desktop\\Progra 2\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademicoForm\\SistemaAcademicoForm.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\killb\\Desktop\\Progra 2\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademicoForm\\SistemaAcademicoForm.csproj",
+        "projectName": "SistemaAcademicoForm",
+        "projectPath": "C:\\Users\\killb\\Desktop\\Progra 2\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademicoForm\\SistemaAcademicoForm.csproj",
+        "packagesPath": "C:\\Users\\killb\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\killb\\Desktop\\Progra 2\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademicoForm\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\killb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0-windows7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0-windows7.0": {
+            "targetAlias": "net6.0-windows",
+            "projectReferences": {
+              "C:\\Users\\killb\\Desktop\\Progra 2\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademico\\SistemaAcademico.csproj": {
+                "projectPath": "C:\\Users\\killb\\Desktop\\Progra 2\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademico\\SistemaAcademico.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0-windows7.0": {
+          "targetAlias": "net6.0-windows",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\killb\\Desktop\\Progra 2\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademico\\SistemaAcademico.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\killb\\Desktop\\Progra 2\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademico\\SistemaAcademico.csproj",
+        "projectName": "SistemaAcademico",
+        "projectPath": "C:\\Users\\killb\\Desktop\\Progra 2\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademico\\SistemaAcademico.csproj",
+        "packagesPath": "C:\\Users\\killb\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\killb\\Desktop\\Progra 2\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademico\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\killb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
