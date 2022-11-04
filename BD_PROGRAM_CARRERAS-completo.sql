@@ -653,3 +653,8 @@ go
 create proc SP_consultar_carreras
 as
 select * from carreras
+
+
+create proc sp_consultar_materias
+as 
+select + from Materias
