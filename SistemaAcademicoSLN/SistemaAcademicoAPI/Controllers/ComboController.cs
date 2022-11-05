@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SistemaAcademico.datos;
 using SistemaAcademico.dominio;
 using SistemaAcademico.fachada;
 using System.Collections.Generic;
@@ -7,6 +8,8 @@ using System.Data;
 
 namespace SistemaAcademicoAPI.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class ComboController : Controller
     {
         private IDataApi dataApi;
@@ -80,20 +83,50 @@ namespace SistemaAcademicoAPI.Controllers
                 return StatusCode(500, "Error interno! Intente luego");
             }
         }
+        [HttpGet("/Proximo")]
+        public ActionResult GetProximoLegajo()
+        {
+            int proximo;
+            try
+            {
+                proximo = dataApi.ObtenerProximo("SP_proximo_legajo");               
+                return Ok(proximo);
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Error interno! Intente luego");
+            }
+        }
 
         [HttpPost("/Inscripcion")]
-        public IActionResult CreateInscripcoin(Inscripcion inscripcion)
+        public IActionResult CreateInscripcion(Inscripcion inscripcion)
         {
             try
             {
                 if (inscripcion == null)
                 {
-                    return BadRequest("Datos de presupuesto incorrectos!");
+                    return BadRequest("Datos de inscripcion incorrectos!");
                 }
 
                 return Ok(dataApi.GuardarInscripcion(inscripcion));
             }
-            catch
+            catch(Exception ex)
+            {
+                return StatusCode(500, "Error interno! Intente luego");
+            }
+        }
+
+        [HttpGet("/ObtenerDetalle")]
+        public IActionResult GetObtenerDetalle(Inscripcion inscripcion)
+        {
+            DataTable dataTable = null;
+            try
+            {
+                return Ok();
+
+            }
+            catch (Exception ex)
             {
                 return StatusCode(500, "Error interno! Intente luego");
             }
