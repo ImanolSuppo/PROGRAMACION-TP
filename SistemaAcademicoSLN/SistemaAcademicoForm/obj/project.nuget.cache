@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "h5/Ii3KZJnuyuvR6pYBNX1qku+zxD5ruGMa0H1kqLzDu4ulNJsjBrlLzN3fddE7ILBxMsVepllR5tNzU9LPnPw==",
+  "dgSpecHash": "G2U/9LK8kX4d2S63BG6QQ+ty5s7SgCoARsUipa7sOGJs9R13ZZEDC7mMbrtxaUVd7GrFbKVAuaZrQirqwQe5Ww==",
   "success": true,
-  "projectFilePath": "C:\\Users\\imasu\\Desktop\\GIT progII\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademicoForm\\SistemaAcademicoForm.csproj",
+  "projectFilePath": "C:\\Users\\imasu\\Desktop\\Copia de seguridad ProgII\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademicoForm\\SistemaAcademicoForm.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\imasu\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\imasu\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

@@ -124,10 +124,10 @@ namespace SistemaAcademicoForm.Formularios
             }
             Materia materia = (Materia)cboMateria.SelectedItem;
             Carrera carrera = (Carrera)cboCarreraa.SelectedItem;
-            DetalleInscripcion detalle = new DetalleInscripcion(carrera, materia, null);
+            DetalleInscripcion detalle = new DetalleInscripcion(carrera, materia, "");
 
             inscripcion.AgregarDetalle(detalle);
-            dgvDetalle.Rows.Add(new object[] { carrera.Nombre, materia.Nombre });
+            dgvDetalle.Rows.Add(new object[] { carrera.nombre, materia.nombre });
         }
 
 
@@ -141,23 +141,29 @@ namespace SistemaAcademicoForm.Formularios
             }
         }
 
-        private void btnInscribirse_Click(object sender, EventArgs e)
+        private async void btnInscribirse_Click(object sender, EventArgs e)
         {
-            inscripcion.Alumno.Legajo = Convert.ToInt32(txtLegajo.Text); //validar que el legajo sea un numero
-            inscripcion.Fecha = dtpFecha.Value;
-            inscripcion.Curso = Convert.ToInt32(txtCurso.Text); //validar
-            GuardarInscripcionAsync(inscripcion);
+            inscripcion.alumno.legajo = Convert.ToInt32(txtLegajo.Text); //validar que el legajo sea un numero
+            inscripcion.fecha = dtpFecha.Value;
+            inscripcion.curso = Convert.ToInt32(txtCurso.Text); //validar         
+            
+            await GuardarInscripcionAsync(inscripcion);
             Clear();
         }
         public async Task GuardarInscripcionAsync(Inscripcion inscripcion)
         {
             string bodyContent = JsonConvert.SerializeObject(inscripcion);
-            string url = "http://localhost:5205/Inscripcion?";
+            string url = "http://localhost:5205/Inscripcion";
             var result = await ClientSingleton.GetInstance().PostAsync(url, bodyContent);
             if (result.Equals("true"))
                 MessageBox.Show("Inscripcion registrado", "Informe", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
                 MessageBox.Show("ERROR. No se pudo registrar la inscripcion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

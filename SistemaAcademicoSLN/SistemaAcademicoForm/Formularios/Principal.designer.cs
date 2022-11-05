@@ -33,6 +33,7 @@
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.anularInscripcionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inscripcionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inscribirseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -77,17 +78,25 @@
             // usuarioToolStripMenuItem
             // 
             this.usuarioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nuevoUsuarioToolStripMenuItem});
+            this.nuevoUsuarioToolStripMenuItem,
+            this.anularInscripcionToolStripMenuItem});
             this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
-            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
-            this.usuarioToolStripMenuItem.Text = "Usuario";
+            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.usuarioToolStripMenuItem.Text = "Soporte";
             // 
             // nuevoUsuarioToolStripMenuItem
             // 
             this.nuevoUsuarioToolStripMenuItem.Name = "nuevoUsuarioToolStripMenuItem";
-            this.nuevoUsuarioToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.nuevoUsuarioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.nuevoUsuarioToolStripMenuItem.Text = "Nuevo Usuario";
             this.nuevoUsuarioToolStripMenuItem.Click += new System.EventHandler(this.nuevoUsuarioToolStripMenuItem_Click);
+            // 
+            // anularInscripcionToolStripMenuItem
+            // 
+            this.anularInscripcionToolStripMenuItem.Name = "anularInscripcionToolStripMenuItem";
+            this.anularInscripcionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.anularInscripcionToolStripMenuItem.Text = "Anular Inscripcion";
+            this.anularInscripcionToolStripMenuItem.Click += new System.EventHandler(this.anularInscripcionToolStripMenuItem_Click);
             // 
             // inscripcionToolStripMenuItem
             // 
@@ -100,7 +109,7 @@
             // inscribirseToolStripMenuItem
             // 
             this.inscribirseToolStripMenuItem.Name = "inscribirseToolStripMenuItem";
-            this.inscribirseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.inscribirseToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.inscribirseToolStripMenuItem.Text = "Inscribirse";
             this.inscribirseToolStripMenuItem.Click += new System.EventHandler(this.inscribirseToolStripMenuItem_Click);
             // 
@@ -179,6 +188,7 @@
         private System.Windows.Forms.ToolStripMenuItem carrerasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
+        private ToolStripMenuItem anularInscripcionToolStripMenuItem;
     }
 }
 

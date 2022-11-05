@@ -42,5 +42,11 @@ namespace SistemaAcademicoForm
             AltaInscripciones altaInscripciones = new AltaInscripciones();
             altaInscripciones.ShowDialog();
         }
+
+        private void anularInscripcionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BajaInscripcion bajaInscripcion = new BajaInscripcion();
+            bajaInscripcion.ShowDialog();
+        }
     }
 }

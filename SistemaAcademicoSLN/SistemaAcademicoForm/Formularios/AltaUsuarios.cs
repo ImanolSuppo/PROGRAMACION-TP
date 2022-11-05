@@ -22,6 +22,7 @@ namespace SistemaAcademicoForm
         {
             InitializeComponent();
             dao = new Dao();
+            ProximoIDAsync();
         }
 
         private void AltaAlumno_Load(object sender, EventArgs e)
@@ -48,11 +49,14 @@ namespace SistemaAcademicoForm
             cbn.DisplayMember = display;
             cbn.ValueMember = value;
         }
-        public void ProximoID()  //Esto está hecho para que el usuario pueda ver la cantidad de alumnos que hay en el sistema 
+        public async Task ProximoIDAsync()  //Esto está hecho para que el usuario pueda ver la cantidad de alumnos que hay en el sistema 
         {
-            int next = dao.ObtenerProximoNro("");
-            lblAlumno.Text = "Usted será el alumno n°: " + next.ToString();
-        }//es necesario(?
+            string url = "http://localhost:5205/Proximo";
+            var result = await ClientSingleton.GetInstance().GetAsync(url);
+            var proxLegajo = JsonConvert.DeserializeObject<int>(result);
+                   
+            lblAlumno.Text = "Su legajo sería n°: " + proxLegajo.ToString();
+        }
         public void Limpiar()
         {
             txtNombre.Clear();
@@ -63,6 +67,7 @@ namespace SistemaAcademicoForm
             cbnBarrio.SelectedIndex = -1;
             txtCalle.Clear();
             txtAltura.Clear();
+            ProximoIDAsync();
         }
 
         private void cbNoTel_CheckedChanged(object sender, EventArgs e)
@@ -79,7 +84,7 @@ namespace SistemaAcademicoForm
         {
             if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtNombre.Text))
                 return false;
-            if (int.TryParse(txtDoc.Text, out _) || int.TryParse(txtAltura.Text, out _) || int.TryParse(txtTelefono.Text, out _))
+            if (!int.TryParse(txtDoc.Text, out _) || !int.TryParse(txtAltura.Text, out _) || !int.TryParse(txtTelefono.Text, out _))
                 return false;
             return true;
         }
@@ -121,16 +126,14 @@ namespace SistemaAcademicoForm
                 string nombre = txtNombre.Text;
                 string apellido = txtApellido.Text;
                 int telefeno = Convert.ToInt32(txtTelefono.Text); //puede saltar error por superar la capacidad max
-                int id_tipo_doc = Convert.ToInt32(cbnTipoDoc.SelectedValue);
+                TipoDocumento id_tipo_doc = (TipoDocumento)cbnTipoDoc.SelectedItem;
                 string nombre_tipo_doc = cbnTipoDoc.Text;
                 int documento = Convert.ToInt32(txtDoc.Text);
-                int id_barrio = Convert.ToInt32(cbnBarrio.SelectedValue);
+                Barrios id_barrio = (Barrios)cbnBarrio.SelectedItem;
                 string nombre_barrio = cbnBarrio.Text;
                 string calle = txtCalle.Text;
-                int altura = Convert.ToInt32(txtAltura.Text);
-                Barrios barrio = new Barrios(id_barrio, nombre_barrio);
-                TipoDocumento tipoDoc = new TipoDocumento(id_tipo_doc, nombre_tipo_doc);
-                    Persona persona = new Persona(nombre, apellido, barrio, calle, altura, telefeno, tipoDoc, documento);
+                int altura = Convert.ToInt32(txtAltura.Text);                               
+                    Persona persona = new Persona(nombre, apellido, id_barrio, calle, altura, telefeno, id_tipo_doc, documento);
                 int legajo = dao.AltaLegajo(persona);
                 if(legajo == 0)
                 {
@@ -143,6 +146,11 @@ namespace SistemaAcademicoForm
                 }
 
             }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

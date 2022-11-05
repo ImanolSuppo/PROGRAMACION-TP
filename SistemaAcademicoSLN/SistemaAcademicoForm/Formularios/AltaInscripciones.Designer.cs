@@ -39,13 +39,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dgvDetalle = new System.Windows.Forms.DataGridView();
+            this.ColCarrera = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColBorrar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnInscribirse = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.ColCarrera = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColBorrar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalle)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -147,6 +147,23 @@
             this.dgvDetalle.TabIndex = 13;
             this.dgvDetalle.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalle_CellContentClick);
             // 
+            // ColCarrera
+            // 
+            this.ColCarrera.HeaderText = "Carreras";
+            this.ColCarrera.Name = "ColCarrera";
+            // 
+            // ColMateria
+            // 
+            this.ColMateria.HeaderText = "Materias";
+            this.ColMateria.Name = "ColMateria";
+            // 
+            // ColBorrar
+            // 
+            this.ColBorrar.HeaderText = "Borrar";
+            this.ColBorrar.Name = "ColBorrar";
+            this.ColBorrar.Text = "Borrar";
+            this.ColBorrar.UseColumnTextForButtonValue = true;
+            // 
             // btnAgregar
             // 
             this.btnAgregar.Location = new System.Drawing.Point(511, 149);
@@ -190,23 +207,7 @@
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Inscripcion";
-            // 
-            // ColCarrera
-            // 
-            this.ColCarrera.HeaderText = "Carreras";
-            this.ColCarrera.Name = "ColCarrera";
-            // 
-            // ColMateria
-            // 
-            this.ColMateria.HeaderText = "Materias";
-            this.ColMateria.Name = "ColMateria";
-            // 
-            // ColBorrar
-            // 
-            this.ColBorrar.HeaderText = "Borrar";
-            this.ColBorrar.Name = "ColBorrar";
-            this.ColBorrar.Text = "Borrar";
-            this.ColBorrar.UseColumnTextForButtonValue = true;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // AltaInscripciones
             // 
