@@ -18,10 +18,14 @@
           "System.Security.Principal.Windows": "4.7.0"
         },
         "compile": {
-          "ref/netstandard2.0/_._": {}
+          "ref/netstandard2.0/_._": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Win32.Registry.dll": {}
+          "lib/netstandard2.0/Microsoft.Win32.Registry.dll": {
+            "related": ".xml"
+          }
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netstandard2.0/Microsoft.Win32.Registry.dll": {
@@ -31,6 +35,19 @@
           "runtimes/win/lib/netstandard2.0/Microsoft.Win32.Registry.dll": {
             "assetType": "runtime",
             "rid": "win"
+          }
+        }
+      },
+      "Newtonsoft.Json/13.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
           }
         }
       },
@@ -77,10 +94,14 @@
           "runtime.native.System.Data.SqlClient.sni": "4.7.0"
         },
         "compile": {
-          "ref/netcoreapp2.1/System.Data.SqlClient.dll": {}
+          "ref/netcoreapp2.1/System.Data.SqlClient.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netcoreapp2.1/System.Data.SqlClient.dll": {}
+          "lib/netcoreapp2.1/System.Data.SqlClient.dll": {
+            "related": ".xml"
+          }
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netcoreapp2.1/System.Data.SqlClient.dll": {
@@ -100,10 +121,14 @@
           "System.Security.Principal.Windows": "4.7.0"
         },
         "compile": {
-          "ref/netstandard2.0/_._": {}
+          "ref/netstandard2.0/_._": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/System.Security.AccessControl.dll": {}
+          "lib/netstandard2.0/System.Security.AccessControl.dll": {
+            "related": ".xml"
+          }
         },
         "runtimeTargets": {
           "runtimes/win/lib/netcoreapp2.0/System.Security.AccessControl.dll": {
@@ -115,10 +140,14 @@
       "System.Security.Principal.Windows/4.7.0": {
         "type": "package",
         "compile": {
-          "ref/netcoreapp3.0/_._": {}
+          "ref/netcoreapp3.0/_._": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/System.Security.Principal.Windows.dll": {}
+          "lib/netstandard2.0/System.Security.Principal.Windows.dll": {
+            "related": ".xml"
+          }
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netcoreapp2.1/System.Security.Principal.Windows.dll": {
@@ -209,6 +238,33 @@
         "runtimes/win/lib/netstandard2.0/Microsoft.Win32.Registry.xml",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "Newtonsoft.Json/13.0.1": {
+      "sha512": "ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
+      "type": "package",
+      "path": "newtonsoft.json/13.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "newtonsoft.json.13.0.1.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
       ]
     },
     "runtime.native.System.Data.SqlClient.sni/4.7.0": {
@@ -468,27 +524,33 @@
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
+      "Newtonsoft.Json >= 13.0.1",
       "SistemaAcademico >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\killb\\.nuget\\packages\\": {}
+    "C:\\Users\\imasu\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\killb\\Desktop\\Progra 2\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademicoForm\\SistemaAcademicoForm.csproj",
+      "projectUniqueName": "C:\\Users\\imasu\\Desktop\\GIT progII\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademicoForm\\SistemaAcademicoForm.csproj",
       "projectName": "SistemaAcademicoForm",
-      "projectPath": "C:\\Users\\killb\\Desktop\\Progra 2\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademicoForm\\SistemaAcademicoForm.csproj",
-      "packagesPath": "C:\\Users\\killb\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\killb\\Desktop\\Progra 2\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademicoForm\\obj\\",
+      "projectPath": "C:\\Users\\imasu\\Desktop\\GIT progII\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademicoForm\\SistemaAcademicoForm.csproj",
+      "packagesPath": "C:\\Users\\imasu\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\imasu\\Desktop\\GIT progII\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademicoForm\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\killb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\imasu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net6.0-windows7.0"
+        "net6.0-windows"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -498,8 +560,8 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\killb\\Desktop\\Progra 2\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademico\\SistemaAcademico.csproj": {
-              "projectPath": "C:\\Users\\killb\\Desktop\\Progra 2\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademico\\SistemaAcademico.csproj"
+            "C:\\Users\\imasu\\Desktop\\GIT progII\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademico\\SistemaAcademico.csproj": {
+              "projectPath": "C:\\Users\\imasu\\Desktop\\GIT progII\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademico\\SistemaAcademico.csproj"
             }
           }
         }
@@ -513,13 +575,20 @@
     "frameworks": {
       "net6.0-windows7.0": {
         "targetAlias": "net6.0-windows",
+        "dependencies": {
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[13.0.1, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -531,7 +600,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

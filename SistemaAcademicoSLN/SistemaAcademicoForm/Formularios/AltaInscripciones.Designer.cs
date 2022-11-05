@@ -45,7 +45,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ColCarrera = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Accion = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ColBorrar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalle)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -134,11 +134,12 @@
             // 
             // dgvDetalle
             // 
+            this.dgvDetalle.AllowUserToAddRows = false;
             this.dgvDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetalle.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColCarrera,
             this.ColMateria,
-            this.Accion});
+            this.ColBorrar});
             this.dgvDetalle.Location = new System.Drawing.Point(13, 189);
             this.dgvDetalle.Name = "dgvDetalle";
             this.dgvDetalle.RowTemplate.Height = 25;
@@ -192,20 +193,20 @@
             // 
             // ColCarrera
             // 
-            this.ColCarrera.HeaderText = "Carrera";
+            this.ColCarrera.HeaderText = "Carreras";
             this.ColCarrera.Name = "ColCarrera";
-            this.ColCarrera.ReadOnly = true;
             // 
             // ColMateria
             // 
-            this.ColMateria.HeaderText = "Materia";
+            this.ColMateria.HeaderText = "Materias";
             this.ColMateria.Name = "ColMateria";
-            this.ColMateria.ReadOnly = true;
             // 
-            // Accion
+            // ColBorrar
             // 
-            this.Accion.HeaderText = "Borrar";
-            this.Accion.Name = "Accion";
+            this.ColBorrar.HeaderText = "Borrar";
+            this.ColBorrar.Name = "ColBorrar";
+            this.ColBorrar.Text = "Borrar";
+            this.ColBorrar.UseColumnTextForButtonValue = true;
             // 
             // AltaInscripciones
             // 
@@ -251,6 +252,6 @@
         private GroupBox groupBox1;
         private DataGridViewTextBoxColumn ColCarrera;
         private DataGridViewTextBoxColumn ColMateria;
-        private DataGridViewButtonColumn Accion;
+        private DataGridViewButtonColumn ColBorrar;
     }
 }

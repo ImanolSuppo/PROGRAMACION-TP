@@ -36,5 +36,11 @@ namespace SistemaAcademicoForm
             ConsultarUsuarios consultar = new ConsultarUsuarios();
             consultar.ShowDialog();
         }
+
+        private void inscribirseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AltaInscripciones altaInscripciones = new AltaInscripciones();
+            altaInscripciones.ShowDialog();
+        }
     }
 }

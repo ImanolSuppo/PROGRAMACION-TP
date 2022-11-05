@@ -1,24 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\killb\\Desktop\\Progra 2\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademicoForm\\SistemaAcademicoForm.csproj": {}
+    "C:\\Users\\imasu\\Desktop\\GIT progII\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademicoForm\\SistemaAcademicoForm.csproj": {}
   },
   "projects": {
-    "C:\\Users\\killb\\Desktop\\Progra 2\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademicoForm\\SistemaAcademicoForm.csproj": {
+    "C:\\Users\\imasu\\Desktop\\GIT progII\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademicoForm\\SistemaAcademicoForm.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\killb\\Desktop\\Progra 2\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademicoForm\\SistemaAcademicoForm.csproj",
+        "projectUniqueName": "C:\\Users\\imasu\\Desktop\\GIT progII\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademicoForm\\SistemaAcademicoForm.csproj",
         "projectName": "SistemaAcademicoForm",
-        "projectPath": "C:\\Users\\killb\\Desktop\\Progra 2\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademicoForm\\SistemaAcademicoForm.csproj",
-        "packagesPath": "C:\\Users\\killb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\killb\\Desktop\\Progra 2\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademicoForm\\obj\\",
+        "projectPath": "C:\\Users\\imasu\\Desktop\\GIT progII\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademicoForm\\SistemaAcademicoForm.csproj",
+        "packagesPath": "C:\\Users\\imasu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\imasu\\Desktop\\GIT progII\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademicoForm\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\killb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\imasu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0-windows7.0"
+          "net6.0-windows"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -28,8 +32,8 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "C:\\Users\\killb\\Desktop\\Progra 2\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademico\\SistemaAcademico.csproj": {
-                "projectPath": "C:\\Users\\killb\\Desktop\\Progra 2\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademico\\SistemaAcademico.csproj"
+              "C:\\Users\\imasu\\Desktop\\GIT progII\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademico\\SistemaAcademico.csproj": {
+                "projectPath": "C:\\Users\\imasu\\Desktop\\GIT progII\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademico\\SistemaAcademico.csproj"
               }
             }
           }
@@ -43,13 +47,20 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -61,21 +72,25 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\killb\\Desktop\\Progra 2\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademico\\SistemaAcademico.csproj": {
+    "C:\\Users\\imasu\\Desktop\\GIT progII\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademico\\SistemaAcademico.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\killb\\Desktop\\Progra 2\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademico\\SistemaAcademico.csproj",
+        "projectUniqueName": "C:\\Users\\imasu\\Desktop\\GIT progII\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademico\\SistemaAcademico.csproj",
         "projectName": "SistemaAcademico",
-        "projectPath": "C:\\Users\\killb\\Desktop\\Progra 2\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademico\\SistemaAcademico.csproj",
-        "packagesPath": "C:\\Users\\killb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\killb\\Desktop\\Progra 2\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademico\\obj\\",
+        "projectPath": "C:\\Users\\imasu\\Desktop\\GIT progII\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademico\\SistemaAcademico.csproj",
+        "packagesPath": "C:\\Users\\imasu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\imasu\\Desktop\\GIT progII\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademico\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\killb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\imasu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -112,7 +127,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -121,7 +137,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -54,3 +54,5 @@ C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAca
 C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademicoForm\obj\Debug\net6.0-windows\SistemaAcademicoForm.csproj.CopyComplete
 C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademicoForm\obj\Debug\net6.0-windows\SistemaAcademicoForm.genruntimeconfig.cache
 C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademicoForm\obj\Debug\net6.0-windows\ref\SistemaAcademicoForm.dll
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademicoForm\obj\Debug\net6.0-windows\SistemaAcademicoForm.Formularios.AltaInscripciones.resources
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademicoForm\bin\Debug\net6.0-windows\Newtonsoft.Json.dll

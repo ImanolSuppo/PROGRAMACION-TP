@@ -1,6 +1,8 @@
 ﻿//using SistemaAcademico.datos.Interfaz;
+using Newtonsoft.Json;
 using SistemaAcademico.datos;
 using SistemaAcademico.dominio;
+using SistemaAcademicoForm.Http;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,17 +26,27 @@ namespace SistemaAcademicoForm
 
         private void AltaAlumno_Load(object sender, EventArgs e)
         {
-            CargarCombo("SP","displey","value",cbnBarrio);
-            CargarCombo("SP", "displey", "value",cbnTipoDoc);
+            CargarComboAsyncBarrio("http://localhost:5205/Barrios", "barrio","id_barrio",cbnBarrio);
+            CargarComboAsyncTipoDoc("http://localhost:5205/TipoDocumentos", "tipo_doc", "id_tipo_doc", cbnTipoDoc);
         }
 
-        private void CargarCombo(string SP, string display, string value, ComboBox cbn)
+        private async Task CargarComboAsyncBarrio(string urlCombo, string display, string value, ComboBox cbn)
         {
-            DataTable table = dao.ObtenerCombo(SP);
-            cbn.DataSource = table;
+            string url = urlCombo;
+            var result = await ClientSingleton.GetInstance().GetAsync(url);
+            var lst = JsonConvert.DeserializeObject<List<Barrios>>(result);
+            cbn.DataSource = lst;
             cbn.DisplayMember = display;
             cbn.ValueMember = value;
-            cbn.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+        private async Task CargarComboAsyncTipoDoc(string urlCombo, string display, string value, ComboBox cbn)
+        {
+            string url = urlCombo;
+            var result = await ClientSingleton.GetInstance().GetAsync(url);
+            var lst = JsonConvert.DeserializeObject<List<TipoDocumento>>(result);
+            cbn.DataSource = lst;
+            cbn.DisplayMember = display;
+            cbn.ValueMember = value;
         }
         public void ProximoID()  //Esto está hecho para que el usuario pueda ver la cantidad de alumnos que hay en el sistema 
         {
@@ -53,7 +65,6 @@ namespace SistemaAcademicoForm
             txtAltura.Clear();
         }
 
-
         private void cbNoTel_CheckedChanged(object sender, EventArgs e)
         {
             if (cbNoTel.Enabled)
@@ -66,45 +77,13 @@ namespace SistemaAcademicoForm
         }
         public bool Validar() //Mejorar la validacion(que muestre un mensaje por cada problema)
         {
-            if (string.IsNullOrEmpty(txtNombre.Text))
-            {
-                MessageBox.Show("Debe Ingresar un nombre");
+            if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtNombre.Text))
                 return false;
-            }
-
-            if (string.IsNullOrEmpty(txtApellido.Text))
-            {
-                MessageBox.Show("Debe ingresar un Apellido");
+            if (int.TryParse(txtDoc.Text, out _) || int.TryParse(txtAltura.Text, out _) || int.TryParse(txtTelefono.Text, out _))
                 return false;
-            }
-
-            if (string.IsNullOrEmpty(txtTelefono.Text))
-            {
-                MessageBox.Show("Debe ingresar un Telefono");
-                return false;
-            }
-
-            if (int.TryParse(txtDoc.Text, out _))
-            {
-                MessageBox.Show("El documento debe ser numerico");
-                return false;
-            }
-
-            if (int.TryParse(txtAltura.Text, out _))
-            {
-                MessageBox.Show("la altura debe ser numerica");
-                return false;
-            }
-
-            if (int.TryParse(txtTelefono.Text, out _))
-            {
-                MessageBox.Show("El telefono debe ser numerico");
-                return false;
-            }
-
-
             return true;
-            public bool ExisteLegajo(int legajo)
+        }
+        public bool ExisteLegajo(int legajo)
         {
             DataTable table = dao.ConsultarLegajo("", legajo);//Asignar SP
             if (table.Rows.Count > 0)
@@ -142,11 +121,15 @@ namespace SistemaAcademicoForm
                 string nombre = txtNombre.Text;
                 string apellido = txtApellido.Text;
                 int telefeno = Convert.ToInt32(txtTelefono.Text); //puede saltar error por superar la capacidad max
-                int tipoDoc = Convert.ToInt32(cbnTipoDoc.SelectedValue);
+                int id_tipo_doc = Convert.ToInt32(cbnTipoDoc.SelectedValue);
+                string nombre_tipo_doc = cbnTipoDoc.Text;
                 int documento = Convert.ToInt32(txtDoc.Text);
-                int barrio = Convert.ToInt32(cbnBarrio.SelectedValue);
+                int id_barrio = Convert.ToInt32(cbnBarrio.SelectedValue);
+                string nombre_barrio = cbnBarrio.Text;
                 string calle = txtCalle.Text;
                 int altura = Convert.ToInt32(txtAltura.Text);
+                Barrios barrio = new Barrios(id_barrio, nombre_barrio);
+                TipoDocumento tipoDoc = new TipoDocumento(id_tipo_doc, nombre_tipo_doc);
                     Persona persona = new Persona(nombre, apellido, barrio, calle, altura, telefeno, tipoDoc, documento);
                 int legajo = dao.AltaLegajo(persona);
                 if(legajo == 0)

@@ -1,5 +1,7 @@
-﻿using SistemaAcademico.datos;
+﻿using Newtonsoft.Json;
+using SistemaAcademico.datos;
 using SistemaAcademico.dominio;
+using SistemaAcademicoForm.Http;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,17 +26,28 @@ namespace SistemaAcademicoForm.Formularios
 
         private void AltaInscripciones_Load(object sender, EventArgs e)
         {
-            CargarCombo();//asignar el combo a materia
-            CargarCombo();//asignar el combo a carrera
+            CargarComboAsyncMateria("http://localhost:5205/Materias", "nombre","id_materia",cboMateria);
+            CargarComboAsyncCarrera("http://localhost:5205/Carreras","nombre","id_carrera",cboCarreraa);
+            Clear();
         }
 
-        private void CargarCombo(string SP, string display, string value, ComboBox cbn)
+        private async Task CargarComboAsyncCarrera(string urlCombo, string display, string value, ComboBox cbn)
         {
-            DataTable table = dao.ObtenerCombo(SP);
-            cbn.DataSource = table;
+            string url = urlCombo;
+            var result = await ClientSingleton.GetInstance().GetAsync(url);
+            var lst = JsonConvert.DeserializeObject<List<Carrera>>(result);
+            cbn.DataSource = lst;
             cbn.DisplayMember = display;
             cbn.ValueMember = value;
-            cbn.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+        private async Task CargarComboAsyncMateria(string urlCombo, string display, string value, ComboBox cbn)
+        {
+            string url = urlCombo;
+            var result = await ClientSingleton.GetInstance().GetAsync(url);
+            var lst = JsonConvert.DeserializeObject<List<Materia>>(result);
+            cbn.DataSource = lst;
+            cbn.DisplayMember = display;
+            cbn.ValueMember = value;
         }
         public void ProximoID()
         {
@@ -87,7 +100,7 @@ namespace SistemaAcademicoForm.Formularios
             cboCarreraa.SelectedIndex = -1;
             cboMateria.SelectedIndex = -1;
             dtpFecha.Value = DateTime.Now;
-
+            dgvDetalle.Rows.Clear();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -100,7 +113,7 @@ namespace SistemaAcademicoForm.Formularios
             {
                 foreach (DataGridViewRow row in dgvDetalle.Rows)
                 {
-                    if (row.Cells["colMateria"].Value.ToString().Equals(cboMateria.Text))
+                    if (row.Cells["ColMateria"].Value.ToString().Equals(cboMateria.Text))
                     {
                         MessageBox.Show("Materia: " + cboMateria.Text + " ya se encuentra como detalle!", "Control",
 
@@ -108,39 +121,43 @@ namespace SistemaAcademicoForm.Formularios
                         return;
                     }
                 }
-                int materia = Convert.ToInt32(cboMateria.SelectedValue);
-                int carrera = Convert.ToInt32(cboCarreraa.SelectedValue);
-                DetalleInscripcion detalle = new DetalleInscripcion();
-                detalle.Materia = materia;
-                detalle.Carrera = carrera;
-
-                inscripcion.AgregarDetalle(detalle);
-                dgvDetalle.Rows.Add(new object[] { carrera, materia });
-
             }
+            Materia materia = (Materia)cboMateria.SelectedItem;
+            Carrera carrera = (Carrera)cboCarreraa.SelectedItem;
+            DetalleInscripcion detalle = new DetalleInscripcion(carrera, materia, null);
+
+            inscripcion.AgregarDetalle(detalle);
+            dgvDetalle.Rows.Add(new object[] { carrera.Nombre, materia.Nombre });
         }
 
-        private void btnInscribirse_Click(object sender, EventArgs e)
-        {
-            inscripcion.Alumno.Legajo=Convert.ToInt32(txtLegajo.Text); //validar que el legajo sea un numero
-            inscripcion.Fecha = dtpFecha.Value;
-            inscripcion.Curso = Convert.ToInt32(txtCurso.Text); //validar
-            if (dao.AltaInscripcion(inscripcion))
-                MessageBox.Show("Inscripcion registrado", "Informe", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            else
-                MessageBox.Show("ERROR. No se pudo registrar la inscripcion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            Clear();
-
-        }
 
         private void dgvDetalle_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvDetalle.CurrentCell.ColumnIndex == 3)
+            if (dgvDetalle.CurrentCell.ColumnIndex == 2)
             {
                 inscripcion.EliminarDetalle(dgvDetalle.CurrentRow.Index);
                 dgvDetalle.Rows.Remove(dgvDetalle.CurrentRow);
 
             }
         }
-    } 
+
+        private void btnInscribirse_Click(object sender, EventArgs e)
+        {
+            inscripcion.Alumno.Legajo = Convert.ToInt32(txtLegajo.Text); //validar que el legajo sea un numero
+            inscripcion.Fecha = dtpFecha.Value;
+            inscripcion.Curso = Convert.ToInt32(txtCurso.Text); //validar
+            GuardarInscripcionAsync(inscripcion);
+            Clear();
+        }
+        public async Task GuardarInscripcionAsync(Inscripcion inscripcion)
+        {
+            string bodyContent = JsonConvert.SerializeObject(inscripcion);
+            string url = "http://localhost:5205/Inscripcion?";
+            var result = await ClientSingleton.GetInstance().PostAsync(url, bodyContent);
+            if (result.Equals("true"))
+                MessageBox.Show("Inscripcion registrado", "Informe", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+                MessageBox.Show("ERROR. No se pudo registrar la inscripcion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+    }
 }

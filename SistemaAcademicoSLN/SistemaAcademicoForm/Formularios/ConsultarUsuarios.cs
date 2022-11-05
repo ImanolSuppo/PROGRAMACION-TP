@@ -39,7 +39,7 @@ namespace SistemaAcademicoForm.Formularios
             else
                 condicion = "Profesor";
             int legajo = Convert.ToInt32(txtLegajo.Text);
-            DataTable table = dao.ConsultarLegajo("SP_CONSULTAR_LEGAJO", legajo, condicion); //INSERTAR SP
+            DataTable table = dao.ConsultarLegajo("SP_CONSULTAR_LEGAJO", legajo); //INSERTAR SP
             dgvLegajo.Rows.Clear();
             foreach (DataRow item in table.Rows)
             {
