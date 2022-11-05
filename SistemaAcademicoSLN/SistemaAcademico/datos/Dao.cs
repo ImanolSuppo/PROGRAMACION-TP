@@ -46,23 +46,6 @@ namespace SistemaAcademico.datos
             return tabla;
         }
 
-        public List<Carrera> ObtenerListaCarrera(DataTable table)
-        {
-            List<Carrera> lst = new List<Carrera>();
-            foreach (DataRow dr in table.Rows)
-            {
-                //Mapear un registro a un objeto del modelo de dominio
-                int nro = int.Parse(dr["id_carrera"].ToString());
-                string nombre = dr["nombre"].ToString();
-                int duracion = int.Parse(dr["duracion"].ToString());
-
-                Carrera aux = new Carrera(nro, nombre, duracion);
-                lst.Add(aux);
-
-            }
-
-            return lst;
-        }
         public DataTable ConsultarLegajo(string SP, int leg)
         {
             DataTable tabla = new DataTable();
@@ -133,15 +116,15 @@ namespace SistemaAcademico.datos
                 t = cnn.BeginTransaction();
                 cmd.Connection = cnn;
                 cmd.Transaction = t;
-                cmd.CommandText = "SP";  //ASIGNAR SP
+                cmd.CommandText = "SP_Insert_inscripcion";  //ASIGNAR SP
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@parametro", objeto.Fecha);
-                cmd.Parameters.AddWithValue("@parametro", objeto.Alumno.Legajo);  //ASIGNAR PARAMETROS
-                cmd.Parameters.AddWithValue("@parametro", objeto.Curso);
+                cmd.Parameters.AddWithValue("@fecha", objeto.Fecha);
+                cmd.Parameters.AddWithValue("@legajo", objeto.Alumno.Legajo);  //ASIGNAR PARAMETROS
+                cmd.Parameters.AddWithValue("@curso", objeto.Curso);
 
                 //parámetro de salida:
                 SqlParameter pOut = new SqlParameter();
-                pOut.ParameterName = "@parametro"; //ASIGNAR PARAMETRO
+                pOut.ParameterName = "@id_inscripcion"; //ASIGNAR PARAMETRO
                 pOut.DbType = DbType.Int32;
                 pOut.Direction = ParameterDirection.Output;
                 cmd.Parameters.Add(pOut);
@@ -153,16 +136,12 @@ namespace SistemaAcademico.datos
                 int detalleNro = 1;
                 foreach (DetalleInscripcion item in objeto.DetalleInscripcions)
                 {
-                    cmdDetalle = new SqlCommand("SP", cnn, t); //ASIGNAR SP
+                    cmdDetalle = new SqlCommand("SP_Insert_detalle", cnn, t); //ASIGNAR SP
                     cmdDetalle.CommandType = CommandType.StoredProcedure;
                     //ASIGNAR PARAMETROS
-                    cmdDetalle.Parameters.AddWithValue("@parametro", inscripcionNro);
-                    cmdDetalle.Parameters.AddWithValue("@parametro", item.Carrera);
-                    cmdDetalle.Parameters.AddWithValue("@parametro", item.Materia);
-                    cmdDetalle.Parameters.AddWithValue("@parametro", item.NotaParcial1);
-                    cmdDetalle.Parameters.AddWithValue("@parametro", item.NotaParcial2);
-                    cmdDetalle.Parameters.AddWithValue("@parametro", item.NotaFinal);
-                    cmdDetalle.Parameters.AddWithValue("@parametro", item.EstadoAcademico);
+                    cmdDetalle.Parameters.AddWithValue("@id_inscripcion", inscripcionNro);
+                    cmdDetalle.Parameters.AddWithValue("@id_carrera", item.Carrera);
+                    cmdDetalle.Parameters.AddWithValue("@id_materia", item.Materia);
                     cmdDetalle.ExecuteNonQuery();
                     detalleNro++;
                 }

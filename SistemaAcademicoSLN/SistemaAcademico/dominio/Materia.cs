@@ -10,5 +10,18 @@ namespace SistemaAcademico.dominio
     {
         public int Id { get; set; }
         public string Nombre { get; set; }
+        public int Legajo { get; set; }
+        public Materia(int id, string nombre, int legajo)
+        {
+            Id = id;
+            Nombre = nombre;
+            Legajo = legajo;
+        }
+        public Materia()
+        {
+            Id = 0;
+            Nombre = "";
+            Legajo = 0;
+        }
     }
 }
