@@ -8,17 +8,17 @@ namespace SistemaAcademico.dominio
 {
     public class Alumno
     {
-        public int Legajo { get; set; }
-        public Persona Persona { get; set; }
+        public int legajo { get; set; }
+        public Persona persona { get; set; }
         public Alumno(int legajo, Persona persona)
         {
-            Legajo = legajo;
-            Persona = persona;
+            this.legajo = legajo;
+            this.persona = persona;
         }
         public Alumno()
         {
-            Legajo = 000;
-            Persona = new Persona();
+            legajo = 000;
+            persona = new Persona();
         }
     }
 }

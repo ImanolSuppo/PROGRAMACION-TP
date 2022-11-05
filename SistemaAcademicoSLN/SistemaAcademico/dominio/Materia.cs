@@ -8,20 +8,20 @@ namespace SistemaAcademico.dominio
 {
     public class Materia
     {
-        public int Id { get; set; }
-        public string Nombre { get; set; }
-        public int Legajo { get; set; }
+        public int id { get; set; }
+        public string nombre { get; set; }
+        public int legajo { get; set; }
         public Materia(int id, string nombre, int legajo)
         {
-            Id = id;
-            Nombre = nombre;
-            Legajo = legajo;
+            this.id = id;
+            this.nombre = nombre;
+            this.legajo = legajo;
         }
         public Materia()
         {
-            Id = 0;
-            Nombre = "";
-            Legajo = 0;
+            id = 0;
+            nombre = "";
+            legajo = 0;
         }
     }
 }

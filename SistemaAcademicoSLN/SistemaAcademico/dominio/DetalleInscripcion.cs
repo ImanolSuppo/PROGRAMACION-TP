@@ -8,20 +8,20 @@ namespace SistemaAcademico.dominio
 {
     public class DetalleInscripcion
     {
-        public Carrera Carrera { get; set; }
-        public Materia Materia { get; set; }
-        public string Baja { get; set; }
-        public DetalleInscripcion( Carrera carrera, Materia materia, string baja)
+        public Carrera carrera { get; set; }
+        public Materia materia { get; set; }
+        public string baja { get; set; }
+        public DetalleInscripcion(Carrera carrera, Materia materia, string baja)
         {
-            Carrera = carrera;
-            Materia = materia;
-            Baja = baja;
+            this.carrera = carrera;
+            this.materia = materia;
+            this.baja = baja;
         }
         public DetalleInscripcion()
         {
-            Carrera = new Carrera();
-            Materia = new Materia();
-            Baja = null;
+            this.carrera = new Carrera();
+            this.materia = new Materia();
+            baja = string.Empty;
         }
     }
 }

@@ -87,5 +87,11 @@ namespace SistemaAcademico.fachada
         {
             return dao.AltaInscripcion(inscripcion);
         }
+
+        public int ObtenerProximo(string sp)
+        {
+            return dao.ObtenerProximoNro(sp);
+        }
+
     }
 }

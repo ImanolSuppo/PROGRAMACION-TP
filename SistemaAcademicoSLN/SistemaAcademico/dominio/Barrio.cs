@@ -8,17 +8,17 @@ namespace SistemaAcademico.dominio
 {
     public class Barrios
     {
-        public int Id { get; set; }
-        public string Barrio { get; set; }
+        public int id { get; set; }
+        public string barrio { get; set; }
         public Barrios(int id, string nombre)
         {
-            Id = id;
-            Barrio = nombre;
+            this.id = id;
+            this.barrio = nombre;
         }
         public Barrios()
         {
-            Id = 0;
-            Barrio = "";
+            id = 0;
+            barrio = "";
         }
     }
     

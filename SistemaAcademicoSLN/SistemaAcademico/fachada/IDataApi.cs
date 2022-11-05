@@ -1,4 +1,5 @@
-﻿using SistemaAcademico.dominio;
+﻿using SistemaAcademico.datos;
+using SistemaAcademico.dominio;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -16,6 +17,8 @@ namespace SistemaAcademico.fachada
         List<TipoDocumento> ObtenerListaTipoDoc(DataTable table);
         List<Barrios> ObtenerListaBarrio(DataTable table);
         bool GuardarInscripcion(Inscripcion inscripcion);
+        int ObtenerProximo(string sp);
+        
 
     }
 }

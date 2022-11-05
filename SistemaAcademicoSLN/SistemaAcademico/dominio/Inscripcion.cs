@@ -8,31 +8,29 @@ namespace SistemaAcademico.dominio
 {
     public class Inscripcion
     {
-        public List<DetalleInscripcion> DetalleInscripcions { get; set; }
-        public Alumno Alumno { get; set; }
-        public DateTime Fecha { get; set; }
-        public int Curso { get; set; }
-        public Inscripcion(List<DetalleInscripcion> detalleInscripcions, Alumno alumno, DateTime fecha, int curso)
-        {
-            DetalleInscripcions = detalleInscripcions;
-            Alumno = alumno;
-            Fecha = fecha;
-            Curso = curso;
-        }
+        public List<DetalleInscripcion> detalleInscripcions { get; set; }
+        public Alumno alumno { get; set; }
+        public DateTime fecha { get; set; }
+        public int curso { get; set; }
+        //public Inscripcion(List<DetalleInscripcion> detalleInscripcions, Alumno alumno, DateTime fecha, int curso)
+        //{
+        //    DetalleInscripcions = detalleInscripcions;
+        //    Alumno = alumno;
+        //    Fecha = fecha;
+        //    Curso = curso;
+        //}
         public Inscripcion()
         {
-            DetalleInscripcions = new List<DetalleInscripcion>();
-            Alumno = new Alumno();
-            Fecha = DateTime.Now;
-            Curso = 0;
+            detalleInscripcions = new List<DetalleInscripcion>();
+            alumno = new Alumno();
         }
         public void AgregarDetalle(DetalleInscripcion detalle)
         {
-            DetalleInscripcions.Add(detalle);
+            detalleInscripcions.Add(detalle);
         }
         public void EliminarDetalle(int indice)
         {
-            DetalleInscripcions.RemoveAt(indice);
+            detalleInscripcions.RemoveAt(indice);
         }
     }
 }

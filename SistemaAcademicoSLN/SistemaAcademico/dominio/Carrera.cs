@@ -8,20 +8,20 @@ namespace SistemaAcademico.dominio
 {
     public class Carrera
     {
-        public int Id { get; set; }
-        public string Nombre { get; set; }
-        public int Duracion { get; set; }
+        public int id { get; set; }
+        public string nombre { get; set; }
+        public int duracion { get; set; }
         public Carrera(int id, string nombre, int duracion)
         {
-            Id = id;
-            Nombre = nombre;
-            Duracion = duracion;
+            this.id = id;
+            this.nombre = nombre;
+            this.duracion = duracion;
         }
         public Carrera()
         {
-            Id = 0;
-            Nombre = "";
-            Duracion = 0;
+            id = 0;
+            nombre = "";
+            duracion = 0;
         }
     }
 }

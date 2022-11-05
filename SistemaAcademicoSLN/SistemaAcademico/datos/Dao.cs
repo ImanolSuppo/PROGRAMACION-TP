@@ -18,7 +18,7 @@ namespace SistemaAcademico.datos
             SqlCommand cmd = new SqlCommand(SP, cnn);
             cmd.CommandType = CommandType.StoredProcedure;
             SqlParameter pOut = new SqlParameter();
-            pOut.ParameterName = "@pOutNombre"; //ASIGNAR PARAMETRO
+            pOut.ParameterName = "@next"; //ASIGNAR PARAMETRO
             pOut.DbType = DbType.Int32;
             pOut.Direction = ParameterDirection.Output;
             cmd.Parameters.Add(pOut);
@@ -27,6 +27,7 @@ namespace SistemaAcademico.datos
 
             return (int)pOut.Value;
         }
+
 
         public DataTable ObtenerCombo(string SP, List<Parametro> values)
         {
@@ -69,25 +70,36 @@ namespace SistemaAcademico.datos
                 t = cnn.BeginTransaction();
                 cmd.Connection = cnn;
                 cmd.Transaction = t;
-                cmd.CommandText = "SP";  //ASIGNAR SP
+                cmd.CommandText = "SP_Insertar_persona";  //ASIGNAR SP
                 cmd.CommandType = CommandType.StoredProcedure;
                 //ASIGNAR PARAMETROS
                 //Creamos primero la persona en la BD
-                cmd.Parameters.AddWithValue("@parametro", persona.Nombre);
-                cmd.Parameters.AddWithValue("@parametro", persona.Apellido);
-                cmd.Parameters.AddWithValue("@parametro", persona.Barrio);
-                cmd.Parameters.AddWithValue("@parametro", persona.Calle);
-                cmd.Parameters.AddWithValue("@parametro", persona.Altura);
-                cmd.Parameters.AddWithValue("@parametro", persona.Telefono);
-                cmd.Parameters.AddWithValue("@parametro", persona.TipoDocumento);
-                cmd.Parameters.AddWithValue("@parametro", persona.Documento);
-                SqlParameter pOut = new SqlParameter();
-                pOut.ParameterName = "@legajo"; //ASIGNAR PARAMETRO
-                pOut.DbType = DbType.Int32;
-                pOut.Direction = ParameterDirection.Output;
-                cmd.Parameters.Add(pOut);
+                cmd.Parameters.AddWithValue("@nombre", persona.nombre);
+                cmd.Parameters.AddWithValue("@apellido", persona.apellido);
+                cmd.Parameters.AddWithValue("@id_barrio ", persona.barrio.id);
+                cmd.Parameters.AddWithValue("@calle ", persona.calle);
+                cmd.Parameters.AddWithValue("@altura ", persona.altura);
+                cmd.Parameters.AddWithValue("@celular ", persona.telefono);
+                cmd.Parameters.AddWithValue("@id_tipo_doc ", persona.tipoDocumento.id);
+                cmd.Parameters.AddWithValue("@nro_doc ", persona.documento);
+                SqlParameter pOutIdPersona = new SqlParameter();
+                SqlParameter pOutLegajo = new SqlParameter();
+                pOutIdPersona.ParameterName = "@nro_persona"; 
+                pOutIdPersona.DbType = DbType.Int32;
+                pOutIdPersona.Direction = ParameterDirection.Output;
+                pOutLegajo.ParameterName = "@legajo"; 
+                pOutLegajo.DbType = DbType.Int32;
+                pOutLegajo.Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(pOutIdPersona);
+                cmd.Parameters.Add(pOutLegajo);
                 cmd.ExecuteNonQuery();
-                legajo = (int)pOut.Value;
+                int id_persona = (int)pOutIdPersona.Value;
+                legajo = (int)pOutLegajo.Value;
+                SqlCommand cmdLegajo = new SqlCommand("SP_Insertar_alumno", cnn, t);
+                cmdLegajo.Parameters.AddWithValue("@id_persona", id_persona);
+                cmdLegajo.Parameters.AddWithValue("@legajo", legajo);
+                cmdLegajo.ExecuteNonQuery();
+
                 t.Commit();
             }
             catch (Exception)
@@ -118,9 +130,9 @@ namespace SistemaAcademico.datos
                 cmd.Transaction = t;
                 cmd.CommandText = "SP_Insert_inscripcion";  //ASIGNAR SP
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@fecha", objeto.Fecha);
-                cmd.Parameters.AddWithValue("@legajo", objeto.Alumno.Legajo);  //ASIGNAR PARAMETROS
-                cmd.Parameters.AddWithValue("@curso", objeto.Curso);
+                cmd.Parameters.AddWithValue("@fecha", objeto.fecha);
+                cmd.Parameters.AddWithValue("@legajo", objeto.alumno.legajo);  //ASIGNAR PARAMETROS
+                cmd.Parameters.AddWithValue("@curso", objeto.curso);
 
                 //parámetro de salida:
                 SqlParameter pOut = new SqlParameter();
@@ -134,14 +146,14 @@ namespace SistemaAcademico.datos
 
                 SqlCommand cmdDetalle;
                 int detalleNro = 1;
-                foreach (DetalleInscripcion item in objeto.DetalleInscripcions)
+                foreach (DetalleInscripcion item in objeto.detalleInscripcions)
                 {
                     cmdDetalle = new SqlCommand("SP_Insert_detalle", cnn, t); //ASIGNAR SP
                     cmdDetalle.CommandType = CommandType.StoredProcedure;
                     //ASIGNAR PARAMETROS
                     cmdDetalle.Parameters.AddWithValue("@id_inscripcion", inscripcionNro);
-                    cmdDetalle.Parameters.AddWithValue("@id_carrera", item.Carrera);
-                    cmdDetalle.Parameters.AddWithValue("@id_materia", item.Materia);
+                    cmdDetalle.Parameters.AddWithValue("@id_carrera", item.carrera.id);
+                    cmdDetalle.Parameters.AddWithValue("@id_materia", item.materia.id);
                     cmdDetalle.ExecuteNonQuery();
                     detalleNro++;
                 }
