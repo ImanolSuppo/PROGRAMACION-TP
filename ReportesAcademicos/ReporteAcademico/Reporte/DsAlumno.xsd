@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DsAlumno" targetNamespace="http://tempuri.org/DsAlumno.xsd" xmlns:mstns="http://tempuri.org/DsAlumno.xsd" xmlns="http://tempuri.org/DsAlumno.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TP_PROGRAMACION_CARRERASConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TP_PROGRAMACION_CARRERASConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ReporteAcademico.Properties.Settings.GlobalReference.Default.TP_PROGRAMACION_CARRERASConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DTAlumnoTableAdapter" GeneratorDataComponentClassName="DTAlumnoTableAdapter" Name="DTAlumno" UserDataComponentName="DTAlumnoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TP_PROGRAMACION_CARRERASConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT p.nombre+','+p.apellido 'Alumno', m.nombre 'Materia', c.nombre 'Carrera' FROM Detalle_Inscripciones d
+JOIN inscripciones i on i.id_inscripcion = d.id_inscripcion
+join Materias m on m.id_materia = d.id_materia
+join Carreras c on c.id_carrera = d.id_carrera
+join alumnos a on a.legajo = i.legajo
+join Personas p on p.id_persona = a.id_persona
+order by c.nombre, m.nombre</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Alumno" DataSetColumn="Alumno" />
+              <Mapping SourceColumn="Materia" DataSetColumn="Materia" />
+              <Mapping SourceColumn="Carrera" DataSetColumn="Carrera" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DsAlumno" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DsAlumno" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DsAlumno">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DTAlumno" msprop:Generator_RowClassName="DTAlumnoRow" msprop:Generator_RowEvHandlerName="DTAlumnoRowChangeEventHandler" msprop:Generator_RowDeletedName="DTAlumnoRowDeleted" msprop:Generator_RowDeletingName="DTAlumnoRowDeleting" msprop:Generator_RowEvArgName="DTAlumnoRowChangeEvent" msprop:Generator_TablePropName="DTAlumno" msprop:Generator_RowChangedName="DTAlumnoRowChanged" msprop:Generator_UserTableName="DTAlumno" msprop:Generator_RowChangingName="DTAlumnoRowChanging" msprop:Generator_TableClassName="DTAlumnoDataTable" msprop:Generator_TableVarName="tableDTAlumno">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Alumno" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Alumno" msprop:Generator_ColumnPropNameInTable="AlumnoColumn" msprop:Generator_ColumnPropNameInRow="Alumno" msprop:Generator_ColumnVarNameInTable="columnAlumno" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="41" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Materia" msprop:Generator_UserColumnName="Materia" msprop:Generator_ColumnPropNameInTable="MateriaColumn" msprop:Generator_ColumnPropNameInRow="Materia" msprop:Generator_ColumnVarNameInTable="columnMateria" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Carrera" msprop:Generator_UserColumnName="Carrera" msprop:Generator_ColumnPropNameInTable="CarreraColumn" msprop:Generator_ColumnPropNameInRow="Carrera" msprop:Generator_ColumnVarNameInTable="columnCarrera" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
