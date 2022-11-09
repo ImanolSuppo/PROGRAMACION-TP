@@ -93,7 +93,7 @@ namespace SistemaAcademicoForm
         }
 
 
-        private void btnCrear_Click(object sender, EventArgs e)
+        private async void btnCrear_Click(object sender, EventArgs e)
         {
             if (!Validar())
             {
@@ -112,14 +112,16 @@ namespace SistemaAcademicoForm
                 string calle = txtCalle.Text;
                 int altura = Convert.ToInt32(txtAltura.Text);                               
                     Persona persona = new Persona(nombre, apellido, id_barrio, calle, altura, telefeno, id_tipo_doc, documento);
-                int legajo = dao.AltaLegajo(persona);
-                if(legajo == 0)
+                string bodyContent = JsonConvert.SerializeObject(persona);
+                string url = "http://localhost:5205/Alumno";
+                var result = await ClientSingleton.GetInstance().PostAsync(url, bodyContent);
+                if (result.Equals("0"))
                 {
                     MessageBox.Show("No se pudo crear el usuario", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    MessageBox.Show("Se creó el Usuario, Tu legajo es: " + legajo, "CONFIRMACION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Se creó el Usuario, Tu legajo es: " + result, "CONFIRMACION", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Limpiar();
                 }
 

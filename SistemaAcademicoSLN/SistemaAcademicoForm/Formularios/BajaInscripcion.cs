@@ -36,18 +36,7 @@ namespace SistemaAcademicoForm.Formularios
             {
                 if (MessageBox.Show("Esta seguro que desea darlo de baja?","CONFIRMACION",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    int legajo = int.Parse(dgvDetalle.CurrentRow.Cells["colLegajo"].Value.ToString());
-                    string? carrera = dgvDetalle.CurrentRow.Cells["colCarrera"].Value.ToString();
-                    string? materia = dgvDetalle.CurrentRow.Cells["colMateria"].Value.ToString();
                     int id = int.Parse(dgvDetalle.CurrentRow.Cells["colId"].Value.ToString());
-                    Inscripcion inscripcion = new Inscripcion();
-                    DetalleInscripcion detalleInscripcion = new DetalleInscripcion();
-                    detalleInscripcion.carrera.nombre = carrera;
-                    detalleInscripcion.materia.nombre = materia;
-                    detalleInscripcion.id_detalle = id;
-                    inscripcion.AgregarDetalle(detalleInscripcion);
-                    inscripcion.alumno.legajo = legajo;
-                    string bodyContent = JsonConvert.SerializeObject(inscripcion);
                     string url = "http://localhost:5205/BajaInscripcion" + id;
                     var result = await ClientSingleton.GetInstance().DeleteAsync(url);
                     if (result.Equals("1"))
@@ -70,24 +59,46 @@ namespace SistemaAcademicoForm.Formularios
                     return;
                 }
             }
-            //Validar Legajo
-            ConsultarPorDao();
-            /*List<Parametro> parametros = new List<Parametro>();
-            Parametro parametroDesde = new Parametro("@fecha_desde ", dtpDesde.Value);
-            Parametro parametroHasta = new Parametro("@fecha_hasta ", dtpHasta.Value);
-            if (!String.IsNullOrEmpty(txtLegajo.Text))
+            if (!string.IsNullOrEmpty(txtLegajo.Text))
             {
-                Parametro parametroLegajo = new Parametro("@legajo", Convert.ToInt32(txtLegajo.Text));
-                parametros.Add(parametroLegajo);
+                if (!await ExisteLegajo(Convert.ToInt32(txtLegajo.Text)))
+                {
+                    MessageBox.Show("El legajo no existe", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
             }
-            parametros.Add(parametroDesde);
-            parametros.Add(parametroHasta);
-            string bodyContent = JsonConvert.SerializeObject(parametros);
+            ObtenerDetalle obtenerDetalle = new ObtenerDetalle();
+            if (!String.IsNullOrEmpty(txtLegajo.Text))
+                obtenerDetalle.legajo = Convert.ToInt32(txtLegajo.Text);
+            obtenerDetalle.fecha_desde = dtpDesde.Value;
+            obtenerDetalle.fecha_hasta = dtpHasta.Value;
+            string bodyContent = JsonConvert.SerializeObject(obtenerDetalle);
             string url = "http://localhost:5205/ObtenerDetalle";
             var result = await ClientSingleton.GetInstance().PostAsync(url, bodyContent);
-            List<Inscripcion>? lst = JsonConvert.DeserializeObject<List<Inscripcion>>(result);*/
-
+            List<Inscripcion>? lst = JsonConvert.DeserializeObject<List<Inscripcion>>(result);
+            dgvDetalle.Rows.Clear();
+            foreach (Inscripcion inscripcion in lst)
+            {
+                foreach (DetalleInscripcion item in inscripcion.detalleInscripcions)
+                {
+                    dgvDetalle.Rows.Add(new object[] {item.id_detalle,
+                    inscripcion.alumno.legajo,
+                    item.carrera.nombre,
+                    item.materia.nombre,
+                    });
+                }
+            }
         }
+
+        private async Task<bool> ExisteLegajo(int legajo)
+        {
+            string url = "http://localhost:5205/ConsultarLegajo?legajo="+legajo;
+            var result = await ClientSingleton.GetInstance().GetAsync(url);
+            if (result.Equals("true"))
+                return true;
+            return false;
+        }
+
         public void ConsultarPorDao()
         {
             DataTable table = ObtenerTabla();

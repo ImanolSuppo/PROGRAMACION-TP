@@ -1,4 +1,7 @@
-﻿using SistemaAcademico.datos;
+﻿using Newtonsoft.Json;
+using SistemaAcademico.datos;
+using SistemaAcademico.dominio;
+using SistemaAcademicoForm.Http;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,33 +24,29 @@ namespace SistemaAcademicoForm.Formularios
             dao = new Dao();
         }
 
-        private void btnConsultar_Click(object sender, EventArgs e)
+        private async void btnConsultar_Click(object sender, EventArgs e)
         {
-            if (!int.TryParse(txtLegajo.Text, out _))
+            List<Parametro> parametros = new List<Parametro>();
+            if(!string.IsNullOrEmpty(txtApellido.Text))
             {
-                MessageBox.Show("Solo insertar caracteres numericos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                Parametro parametroApellido = new Parametro("@apellido", txtApellido.Text);
+                parametros.Add(parametroApellido);
             }
-            if(!rdbAlumno.Checked && !rdbProfesor.Checked)
+            if (!string.IsNullOrEmpty(txtNombre.Text))
             {
-                MessageBox.Show("Debe especificar si es Alumno o Profesor", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                Parametro parametroNombre = new Parametro("@nombre", txtNombre.Text);
+                parametros.Add(parametroNombre);
             }
-            string condicion = "";
-            if (rdbAlumno.Checked)
-                condicion = "Alumno";
-            else
-                condicion = "Profesor";
-            int legajo = Convert.ToInt32(txtLegajo.Text);
-            DataTable table = dao.ConsultarLegajo("SP_CONSULTAR_LEGAJO", legajo); //INSERTAR SP
+            string bodyContent = JsonConvert.SerializeObject(parametros);
+            string url = "http://localhost:5205/ObtenerAlumnos";
+            var result = await ClientSingleton.GetInstance().PostAsync(url, bodyContent);
+            List<Alumno>? lst = JsonConvert.DeserializeObject<List<Alumno>>(result);
             dgvLegajo.Rows.Clear();
-            foreach (DataRow item in table.Rows)
+            foreach (Alumno item in lst)
             {
-                string? NombreComp = item["Nombre_Completo"].ToString();
-                string? Direccion = item["Direccion"].ToString();
-                string? celular = item["Celular"].ToString();
-                dgvLegajo.Rows.Add(legajo,NombreComp,Direccion,celular);
+                dgvLegajo.Rows.Add(item.legajo, item.persona.nombre, item.persona.calle, item.persona.telefono);
             }
+
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
