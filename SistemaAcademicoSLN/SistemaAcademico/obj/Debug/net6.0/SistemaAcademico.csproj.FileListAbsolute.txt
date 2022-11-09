@@ -82,3 +82,17 @@ C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\PROGRAMACION-TP-main\SistemaAc
 C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\PROGRAMACION-TP-main\SistemaAcademicoSLN\SistemaAcademico\obj\Debug\net6.0\refint\SistemaAcademico.dll
 C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\PROGRAMACION-TP-main\SistemaAcademicoSLN\SistemaAcademico\obj\Debug\net6.0\SistemaAcademico.pdb
 C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\PROGRAMACION-TP-main\SistemaAcademicoSLN\SistemaAcademico\obj\Debug\net6.0\ref\SistemaAcademico.dll
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademico\bin\Debug\net6.0\SistemaAcademico.deps.json
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademico\bin\Debug\net6.0\SistemaAcademico.dll
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademico\bin\Debug\net6.0\SistemaAcademico.pdb
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademico\obj\Debug\net6.0\SistemaAcademico.csproj.AssemblyReference.cache
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademico\obj\Debug\net6.0\SistemaAcademico.Properties.Resources.resources
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademico\obj\Debug\net6.0\SistemaAcademico.csproj.GenerateResource.cache
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademico\obj\Debug\net6.0\SistemaAcademico.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademico\obj\Debug\net6.0\SistemaAcademico.AssemblyInfoInputs.cache
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademico\obj\Debug\net6.0\SistemaAcademico.AssemblyInfo.cs
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademico\obj\Debug\net6.0\SistemaAcademico.csproj.CoreCompileInputs.cache
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademico\obj\Debug\net6.0\SistemaAcademico.dll
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademico\obj\Debug\net6.0\refint\SistemaAcademico.dll
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademico\obj\Debug\net6.0\SistemaAcademico.pdb
+C:\Users\imasu\Desktop\GIT progII\PROGRAMACION-TP\PROGRAMACION-TP\SistemaAcademicoSLN\SistemaAcademico\obj\Debug\net6.0\ref\SistemaAcademico.dll

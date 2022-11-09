@@ -15,5 +15,6 @@ namespace SistemaAcademico.datos
         bool AltaInscripcion(Inscripcion objeto);
         int BajaInscripcion(int id_detalle);
         bool Actualizar(string SP, Alumno alumno);
+        DataTable ConsultarDetalle(string v, ObtenerDetalle obtener);
     }
 }

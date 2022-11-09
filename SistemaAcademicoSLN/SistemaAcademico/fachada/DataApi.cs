@@ -96,17 +96,22 @@ namespace SistemaAcademico.fachada
         public List<Inscripcion> ObtenerListaInscripciones(DataTable table)
         {
             List<Inscripcion> lst = new List<Inscripcion>();
-            foreach (DataRow dr in table.Rows)
+            if (table != null)
             {
-                //Mapear un registro a un objeto del modelo de dominio
-                Inscripcion aux = new Inscripcion();
-                DetalleInscripcion detalleInscripcions = new DetalleInscripcion();
-                detalleInscripcions.carrera.nombre = dr["carrera"].ToString();
-                detalleInscripcions.materia.nombre = dr["materia"].ToString();
-                aux.alumno.legajo = int.Parse(dr["legajo"].ToString());
-                aux.AgregarDetalle(detalleInscripcions);
-                lst.Add(aux);
+                foreach (DataRow dr in table.Rows)
+                {
+                    //Mapear un registro a un objeto del modelo de dominio
+                    Inscripcion aux = new Inscripcion();
+                    DetalleInscripcion detalleInscripcions = new DetalleInscripcion();
+                    detalleInscripcions.id_detalle = int.Parse(dr["id_detalle"].ToString());
+                    detalleInscripcions.carrera.nombre = dr["carrera"].ToString();
+                    detalleInscripcions.materia.nombre = dr["materia"].ToString();
+                    aux.alumno.legajo = int.Parse(dr["legajo"].ToString());
+                    aux.AgregarDetalle(detalleInscripcions);
+                    lst.Add(aux);
+                }
             }
+
             return lst;
         }
 
@@ -126,11 +131,7 @@ namespace SistemaAcademico.fachada
             {
                 //Mapear un registro a un objeto del modelo de dominio
                 Alumno aux = new Alumno();
-                //DetalleInscripcion detalleInscripcions = new DetalleInscripcion();
-                //detalleInscripcions.carrera.nombre = dr["carrera"].ToString();
-                //detalleInscripcions.materia.nombre = dr["materia"].ToString();
-                //aux.alumno.legajo = int.Parse(dr["legajo"].ToString());
-                //aux.AgregarDetalle(detalleInscripcions);
+                aux.legajo = int.Parse(dr["legajo"].ToString());
                 lst.Add(aux);
             }
             return lst;
@@ -142,6 +143,35 @@ namespace SistemaAcademico.fachada
                 return true;
             else
                 return false;
+        }
+
+        public int GuardarAlumno(Persona persona)
+        {
+            return dao.AltaLegajo(persona);
+        }
+
+        public List<Alumno> ObtenerListaAlumnos(DataTable table)
+        {
+            List<Alumno> lst = new List<Alumno>();
+            if (table != null)
+            {
+                foreach (DataRow dr in table.Rows)
+                {
+                    //Mapear un registro a un objeto del modelo de dominio
+                    Alumno aux = new Alumno();
+                    aux.legajo = int.Parse(dr["Legajo"].ToString());
+                    aux.persona.nombre = dr["Nombre_Completo"].ToString();
+                    aux.persona.calle = dr["Direccion"].ToString();
+                    if(int.TryParse(dr["Telefono"].ToString(),out _))
+                        aux.persona.telefono = int.Parse(dr["Telefono"].ToString());
+                    lst.Add(aux);
+                }
+            }
+            return lst;
+        }
+        public DataTable ObtenerDetalle(string v, ObtenerDetalle obtener)
+        {
+            return dao.ConsultarDetalle(v, obtener);
         }
     }
 }

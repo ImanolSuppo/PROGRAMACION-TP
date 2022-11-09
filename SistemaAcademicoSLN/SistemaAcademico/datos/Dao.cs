@@ -24,27 +24,34 @@ namespace SistemaAcademico.datos
             cmd.Parameters.Add(pOut);
             cmd.ExecuteNonQuery();
             cnn.Close();
-
             return (int)pOut.Value;
         }
 
 
         public DataTable ObtenerCombo(string SP, List<Parametro> parametros)
         {
-            DataTable tabla = new DataTable();
-            cnn.Open();
-            SqlCommand cmd = new SqlCommand(SP, cnn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            if (parametros != null)
+            try
             {
-                foreach (Parametro oParametro in parametros)
+                DataTable tabla = new DataTable();
+                cnn.Open();
+                SqlCommand cmd = new SqlCommand(SP, cnn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                if (parametros != null)
                 {
-                    cmd.Parameters.AddWithValue(oParametro.Clave, oParametro.Valor);
+                    foreach (Parametro oParametro in parametros)
+                    {
+                        cmd.Parameters.AddWithValue(oParametro.Clave, oParametro.Valor.ToString());
+                    }
                 }
+                tabla.Load(cmd.ExecuteReader());
+                cnn.Close();
+                return tabla;
             }
-            tabla.Load(cmd.ExecuteReader());
-            cnn.Close();
-            return tabla;
+            catch(Exception e)
+            {
+                cnn.Close();
+                return null;
+            }
         }
 
         public DataTable ConsultarLegajo(string SP, int leg)
@@ -191,14 +198,6 @@ namespace SistemaAcademico.datos
                 cmd.Transaction = t;
                 cmd.CommandText = "SP_baja_inscripcion";
                 cmd.CommandType = CommandType.StoredProcedure;
-                /*foreach (DetalleInscripcion item in inscripcion.detalleInscripcions)
-                {
-                    cmd.Parameters.Clear();
-                    cmd.Parameters.AddWithValue("@legajo", inscripcion.alumno.legajo);
-                    cmd.Parameters.AddWithValue("@carrera", item.carrera.nombre);
-                    cmd.Parameters.AddWithValue("@materia", item.materia.nombre);
-                    afectadas = afectadas + cmd.ExecuteNonQuery();
-                }*/
                 cmd.Parameters.AddWithValue("@id_detalle", id_detalle);
                 afectadas = cmd.ExecuteNonQuery();
                 t.Commit();
@@ -258,6 +257,29 @@ namespace SistemaAcademico.datos
             }
 
             return ok;
+        }
+
+        public DataTable ConsultarDetalle(string v, ObtenerDetalle obtener)
+        {
+            try
+            {
+                DataTable tabla = new DataTable();
+                cnn.Open();
+                SqlCommand cmd = new SqlCommand(v, cnn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                if (obtener.legajo != 0)
+                    cmd.Parameters.AddWithValue("@legajo", obtener.legajo);
+                cmd.Parameters.AddWithValue("@fecha_desde", obtener.fecha_desde);
+                cmd.Parameters.AddWithValue("@fecha_hasta", obtener.fecha_hasta);
+                tabla.Load(cmd.ExecuteReader());
+                cnn.Close();
+                return tabla;
+            }
+            catch (Exception e)
+            {
+                cnn.Close();
+                return null;
+            }
         }
     }
 }

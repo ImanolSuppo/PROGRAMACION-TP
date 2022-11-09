@@ -23,5 +23,8 @@ namespace SistemaAcademico.fachada
         object? ActualizarUsuario(string SP, Alumno alumno);
         List<Alumno> ObtenerLegajos(DataTable table);
         bool ConsultarLegajo(string SP, int leg);
+        int GuardarAlumno(Persona persona);
+        List<Alumno> ObtenerListaAlumnos(DataTable table);
+        DataTable ObtenerDetalle(string v, ObtenerDetalle obtener);
     }
 }
