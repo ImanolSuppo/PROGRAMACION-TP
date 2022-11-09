@@ -63,6 +63,26 @@ namespace SistemaAcademicoForm.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AcercaDe {
+            get {
+                object obj = ResourceManager.GetObject("AcercaDe", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Email {
+            get {
+                object obj = ResourceManager.GetObject("Email", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fondoPrincipal {
             get {
                 object obj = ResourceManager.GetObject("fondoPrincipal", resourceCulture);
@@ -76,6 +96,46 @@ namespace SistemaAcademicoForm.Properties {
         internal static System.Drawing.Bitmap fondoprincipal1 {
             get {
                 object obj = ResourceManager.GetObject("fondoprincipal1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fotoFranco {
+            get {
+                object obj = ResourceManager.GetObject("fotoFranco", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fotoIma {
+            get {
+                object obj = ResourceManager.GetObject("fotoIma", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IconWhatsApp {
+            get {
+                object obj = ResourceManager.GetObject("IconWhatsApp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Linkedin {
+            get {
+                object obj = ResourceManager.GetObject("Linkedin", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

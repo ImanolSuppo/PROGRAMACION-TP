@@ -9,10 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.ReportingServices.ReportViewerControl.Winforms" Version="140.340.80" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SistemaAcademicoReport\SistemaAcademicoReport.csproj" />
     <ProjectReference Include="..\SistemaAcademico\SistemaAcademico.csproj" />
   </ItemGroup>
 
