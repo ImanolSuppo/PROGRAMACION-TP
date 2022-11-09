@@ -132,19 +132,56 @@ namespace SistemaAcademicoAPI.Controllers
                 return StatusCode(500, "Error interno! Intente luego");
             }
         }
+        [HttpPost("/Alumno")]
+        public IActionResult CreateAlumno(Persona persona)
+        {
+            try
+            {
+                if (persona == null)
+                {
+                    return BadRequest("Datos de alumno incorrectos!");
+                }
+                int legajo = dataApi.GuardarAlumno(persona);
+                return Ok(legajo);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Error interno! Intente luego");
+            }
+        }
 
         [HttpPost("/ObtenerDetalle")]
-        public IActionResult GetObtenerDetalle(List<Parametro> parametros)
+        public IActionResult GetObtenerDetalle(ObtenerDetalle obtener)
         {
             DataTable dataTable = null;
             try
             {
-                if ( parametros == null || parametros.Count == 0)
+                if (obtener == null)
+                {
+                    return BadRequest("Datos de detalle incorrectos!");
+                }
+                DataTable table = dataApi.ObtenerDetalle("SP_obtener_detalles", obtener);
+                List<Inscripcion> lst = dataApi.ObtenerListaInscripciones(table);
+                return Ok(lst);
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Error interno! Intente luego");
+            }
+        }
+        [HttpPost("/ObtenerAlumnos")]
+        public IActionResult GetObtenerAlumnos(List<Parametro> parametros)
+        {
+            DataTable dataTable = null;
+            try
+            {
+                if (parametros == null)
                 {
                     return BadRequest("Datos de inscripcion incorrectos!");
                 }
-                DataTable table = dataApi.GetCombo("SP_obtener_detalles", parametros);
-                List<Inscripcion> lst = dataApi.ObtenerListaInscripciones(table);
+                DataTable table = dataApi.GetCombo("SP_Obtener_Alumnos", parametros);
+                List<Alumno> lst = dataApi.ObtenerListaAlumnos(table);
                 return Ok(lst);
 
             }
@@ -189,20 +226,21 @@ namespace SistemaAcademicoAPI.Controllers
             }
         }
 
-        //public ActionResult GetComboLegajos()
-        //{
-        //    DataTable dataTable = null;
-        //    try
-        //    {
-        //        dataTable = dataApi.GetCombo("SP_CONSULTAR_LEGAJOS", null);
-        //        List<Barrios> lst = dataApi.ObtenerLegajos(dataTable);
-        //        return Ok(lst);
+        [HttpGet("/ComboLegajos")]
+        public ActionResult GetComboLegajos()
+        {
+            DataTable dataTable = null;
+            try
+            {
+                dataTable = dataApi.GetCombo("SP_combo_legajo", null);
+                List<Alumno> lst = dataApi.ObtenerLegajos(dataTable);
+                return Ok(lst);
 
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return StatusCode(500, "Error interno! Intente luego");
-        //    }
-        //}
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Error interno! Intente luego");
+            }
+        }
     }
 }

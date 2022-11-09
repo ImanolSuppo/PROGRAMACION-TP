@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XrK3O6XmqHx/LLrpF4DXYIlaPAPOoQmyPTFWtbk18LeY7Q5GO7/O75Jo3+tCJYGk1dAq1i9hDs5kUwcNoj8jJg==",
+  "dgSpecHash": "7XXk9GsIx57cQdulXKIg4Yd79eLBLpypGW4o+dehqxQVzlqAxo8JF9WEm8F8X9oFlwKDlIZC3Mwn48O5Ii4wXA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\imasu\\Desktop\\GIT progII\\PROGRAMACION-TP\\PROGRAMACION-TP-main\\SistemaAcademicoSLN\\SistemaAcademicoAPI\\SistemaAcademicoAPI.csproj",
+  "projectFilePath": "C:\\Users\\imasu\\Desktop\\GIT progII\\PROGRAMACION-TP\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademicoAPI\\SistemaAcademicoAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\imasu\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\imasu\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
