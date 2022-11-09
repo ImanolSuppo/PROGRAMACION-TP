@@ -24,32 +24,40 @@ namespace SistemaAcademico.fachada
         public List<Carrera> ObtenerListaCarrera(DataTable table)
         {
             List<Carrera> lst = new List<Carrera>();
-            foreach (DataRow dr in table.Rows)
+            if (table != null)
             {
-                //Mapear un registro a un objeto del modelo de dominio
-                int id = int.Parse(dr["id_carrera"].ToString());
-                string nombre = dr["nombre"].ToString();
-                int duracion = int.Parse(dr["duracion"].ToString());
+                foreach (DataRow dr in table.Rows)
+                {
+                    //Mapear un registro a un objeto del modelo de dominio
+                    int id = int.Parse(dr["id_carrera"].ToString());
+                    string nombre = dr["nombre"].ToString();
+                    int duracion = int.Parse(dr["duracion"].ToString());
 
-                Carrera aux = new Carrera(id, nombre, duracion);
-                lst.Add(aux);
+                    Carrera aux = new Carrera(id, nombre, duracion);
+                    lst.Add(aux);
+                }
             }
+
 
             return lst;
         }
         public List<Materia> ObtenerListaMateria(DataTable table)
         {
             List<Materia> lst = new List<Materia>();
-            foreach (DataRow dr in table.Rows)
+            if (table != null)
             {
-                //Mapear un registro a un objeto del modelo de dominio
-                int id = int.Parse(dr["id_materia"].ToString());
-                string nombre = dr["nombre"].ToString();
-                int profesor = int.Parse(dr["legajo"].ToString());
+                foreach (DataRow dr in table.Rows)
+                {
+                    //Mapear un registro a un objeto del modelo de dominio
+                    int id = int.Parse(dr["id_materia"].ToString());
+                    string nombre = dr["nombre"].ToString();
+                    int profesor = int.Parse(dr["legajo"].ToString());
 
-                Materia aux = new Materia(id, nombre, profesor);
-                lst.Add(aux);
+                    Materia aux = new Materia(id, nombre, profesor);
+                    lst.Add(aux);
+                }
             }
+
 
             return lst;
         }
