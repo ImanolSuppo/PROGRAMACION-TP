@@ -52,14 +52,14 @@
             this.txtUsuario.Location = new System.Drawing.Point(228, 146);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(119, 23);
-            this.txtUsuario.TabIndex = 1;
+            this.txtUsuario.TabIndex = 0;
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(238, 247);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
+            this.button1.TabIndex = 2;
             this.button1.Text = "Iniciar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -70,7 +70,7 @@
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.PasswordChar = '*';
             this.txtContraseña.Size = new System.Drawing.Size(119, 23);
-            this.txtContraseña.TabIndex = 4;
+            this.txtContraseña.TabIndex = 1;
             // 
             // label2
             // 

@@ -245,6 +245,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cboLegajo);
+            this.MaximumSize = new System.Drawing.Size(528, 427);
             this.Name = "ModificarAlumno";
             this.Text = "ModificarAlumno";
             this.Load += new System.EventHandler(this.ModificarAlumno_Load);

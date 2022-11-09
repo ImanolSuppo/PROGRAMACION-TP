@@ -38,13 +38,13 @@
             this.btnArchivo = new System.Windows.Forms.Button();
             this.pSoporte = new System.Windows.Forms.Panel();
             this.btnAnularInscripcion = new System.Windows.Forms.Button();
-            this.btnNuevoUsuario = new System.Windows.Forms.Button();
+            this.btnModificarUsuario = new System.Windows.Forms.Button();
             this.btnSoporte = new System.Windows.Forms.Button();
             this.pInscripcion = new System.Windows.Forms.Panel();
             this.btnInscribirse = new System.Windows.Forms.Button();
+            this.btnNuevoUsuario = new System.Windows.Forms.Button();
             this.btnInscripcion = new System.Windows.Forms.Button();
             this.pConsultar = new System.Windows.Forms.Panel();
-            this.btnInscripciones = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -87,7 +87,7 @@
             this.pAyuda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(100)))), ((int)(((byte)(83)))));
             this.pAyuda.Controls.Add(this.btnAcercaDe);
             this.pAyuda.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pAyuda.Location = new System.Drawing.Point(0, 425);
+            this.pAyuda.Location = new System.Drawing.Point(0, 431);
             this.pAyuda.Name = "pAyuda";
             this.pAyuda.Size = new System.Drawing.Size(200, 25);
             this.pAyuda.TabIndex = 10;
@@ -115,7 +115,7 @@
             this.btnAyuda.FlatAppearance.BorderSize = 0;
             this.btnAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAyuda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAyuda.Location = new System.Drawing.Point(0, 388);
+            this.btnAyuda.Location = new System.Drawing.Point(0, 394);
             this.btnAyuda.Name = "btnAyuda";
             this.btnAyuda.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnAyuda.Size = new System.Drawing.Size(200, 37);
@@ -130,7 +130,7 @@
             this.pArchivo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(100)))), ((int)(((byte)(83)))));
             this.pArchivo.Controls.Add(this.btnSalir);
             this.pArchivo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pArchivo.Location = new System.Drawing.Point(0, 364);
+            this.pArchivo.Location = new System.Drawing.Point(0, 370);
             this.pArchivo.Name = "pArchivo";
             this.pArchivo.Size = new System.Drawing.Size(200, 24);
             this.pArchivo.TabIndex = 8;
@@ -158,7 +158,7 @@
             this.btnArchivo.FlatAppearance.BorderSize = 0;
             this.btnArchivo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnArchivo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnArchivo.Location = new System.Drawing.Point(0, 327);
+            this.btnArchivo.Location = new System.Drawing.Point(0, 333);
             this.btnArchivo.Name = "btnArchivo";
             this.btnArchivo.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnArchivo.Size = new System.Drawing.Size(200, 37);
@@ -172,9 +172,9 @@
             // 
             this.pSoporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(100)))), ((int)(((byte)(83)))));
             this.pSoporte.Controls.Add(this.btnAnularInscripcion);
-            this.pSoporte.Controls.Add(this.btnNuevoUsuario);
+            this.pSoporte.Controls.Add(this.btnModificarUsuario);
             this.pSoporte.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pSoporte.Location = new System.Drawing.Point(0, 280);
+            this.pSoporte.Location = new System.Drawing.Point(0, 286);
             this.pSoporte.Name = "pSoporte";
             this.pSoporte.Size = new System.Drawing.Size(200, 47);
             this.pSoporte.TabIndex = 6;
@@ -189,11 +189,71 @@
             this.btnAnularInscripcion.Name = "btnAnularInscripcion";
             this.btnAnularInscripcion.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnAnularInscripcion.Size = new System.Drawing.Size(200, 23);
-            this.btnAnularInscripcion.TabIndex = 1;
+            this.btnAnularInscripcion.TabIndex = 2;
             this.btnAnularInscripcion.Text = "Anular Inscripcion";
             this.btnAnularInscripcion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAnularInscripcion.UseVisualStyleBackColor = false;
-            this.btnAnularInscripcion.Click += new System.EventHandler(this.btnAnularInscripcion_Click);
+            this.btnAnularInscripcion.Click += new System.EventHandler(this.btnAnularInscripcion_Click_1);
+            // 
+            // btnModificarUsuario
+            // 
+            this.btnModificarUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(215)))), ((int)(((byte)(184)))));
+            this.btnModificarUsuario.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnModificarUsuario.FlatAppearance.BorderSize = 0;
+            this.btnModificarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificarUsuario.Location = new System.Drawing.Point(0, 0);
+            this.btnModificarUsuario.Name = "btnModificarUsuario";
+            this.btnModificarUsuario.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnModificarUsuario.Size = new System.Drawing.Size(200, 23);
+            this.btnModificarUsuario.TabIndex = 1;
+            this.btnModificarUsuario.Text = "Modificar Usuario";
+            this.btnModificarUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModificarUsuario.UseVisualStyleBackColor = false;
+            this.btnModificarUsuario.Click += new System.EventHandler(this.btnAnularInscripcion_Click);
+            // 
+            // btnSoporte
+            // 
+            this.btnSoporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(198)))), ((int)(((byte)(165)))));
+            this.btnSoporte.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSoporte.FlatAppearance.BorderSize = 0;
+            this.btnSoporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSoporte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSoporte.Location = new System.Drawing.Point(0, 249);
+            this.btnSoporte.Name = "btnSoporte";
+            this.btnSoporte.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnSoporte.Size = new System.Drawing.Size(200, 37);
+            this.btnSoporte.TabIndex = 5;
+            this.btnSoporte.Text = "SOPORTE";
+            this.btnSoporte.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSoporte.UseVisualStyleBackColor = false;
+            this.btnSoporte.Click += new System.EventHandler(this.btnSoporte_Click);
+            // 
+            // pInscripcion
+            // 
+            this.pInscripcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(100)))), ((int)(((byte)(83)))));
+            this.pInscripcion.Controls.Add(this.btnInscribirse);
+            this.pInscripcion.Controls.Add(this.btnNuevoUsuario);
+            this.pInscripcion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pInscripcion.Location = new System.Drawing.Point(0, 200);
+            this.pInscripcion.Name = "pInscripcion";
+            this.pInscripcion.Size = new System.Drawing.Size(200, 49);
+            this.pInscripcion.TabIndex = 4;
+            // 
+            // btnInscribirse
+            // 
+            this.btnInscribirse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(215)))), ((int)(((byte)(184)))));
+            this.btnInscribirse.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnInscribirse.FlatAppearance.BorderSize = 0;
+            this.btnInscribirse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInscribirse.Location = new System.Drawing.Point(0, 23);
+            this.btnInscribirse.Name = "btnInscribirse";
+            this.btnInscribirse.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnInscribirse.Size = new System.Drawing.Size(200, 25);
+            this.btnInscribirse.TabIndex = 0;
+            this.btnInscribirse.Text = "Inscribirse";
+            this.btnInscribirse.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInscribirse.UseVisualStyleBackColor = false;
+            this.btnInscribirse.Click += new System.EventHandler(this.btnInscribirse_Click_1);
             // 
             // btnNuevoUsuario
             // 
@@ -211,49 +271,6 @@
             this.btnNuevoUsuario.UseVisualStyleBackColor = false;
             this.btnNuevoUsuario.Click += new System.EventHandler(this.btnNuevoUsuario_Click);
             // 
-            // btnSoporte
-            // 
-            this.btnSoporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(198)))), ((int)(((byte)(165)))));
-            this.btnSoporte.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSoporte.FlatAppearance.BorderSize = 0;
-            this.btnSoporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSoporte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSoporte.Location = new System.Drawing.Point(0, 243);
-            this.btnSoporte.Name = "btnSoporte";
-            this.btnSoporte.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnSoporte.Size = new System.Drawing.Size(200, 37);
-            this.btnSoporte.TabIndex = 5;
-            this.btnSoporte.Text = "SOPORTE";
-            this.btnSoporte.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSoporte.UseVisualStyleBackColor = false;
-            this.btnSoporte.Click += new System.EventHandler(this.btnSoporte_Click);
-            // 
-            // pInscripcion
-            // 
-            this.pInscripcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(100)))), ((int)(((byte)(83)))));
-            this.pInscripcion.Controls.Add(this.btnInscribirse);
-            this.pInscripcion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pInscripcion.Location = new System.Drawing.Point(0, 219);
-            this.pInscripcion.Name = "pInscripcion";
-            this.pInscripcion.Size = new System.Drawing.Size(200, 24);
-            this.pInscripcion.TabIndex = 4;
-            // 
-            // btnInscribirse
-            // 
-            this.btnInscribirse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(215)))), ((int)(((byte)(184)))));
-            this.btnInscribirse.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnInscribirse.FlatAppearance.BorderSize = 0;
-            this.btnInscribirse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInscribirse.Location = new System.Drawing.Point(0, 0);
-            this.btnInscribirse.Name = "btnInscribirse";
-            this.btnInscribirse.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnInscribirse.Size = new System.Drawing.Size(200, 23);
-            this.btnInscribirse.TabIndex = 0;
-            this.btnInscribirse.Text = "Inscribirse";
-            this.btnInscribirse.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInscribirse.UseVisualStyleBackColor = false;
-            this.btnInscribirse.Click += new System.EventHandler(this.btnInscribirse_Click_1);
-            // 
             // btnInscripcion
             // 
             this.btnInscripcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(198)))), ((int)(((byte)(165)))));
@@ -261,7 +278,7 @@
             this.btnInscripcion.FlatAppearance.BorderSize = 0;
             this.btnInscripcion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInscripcion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInscripcion.Location = new System.Drawing.Point(0, 182);
+            this.btnInscripcion.Location = new System.Drawing.Point(0, 163);
             this.btnInscripcion.Name = "btnInscripcion";
             this.btnInscripcion.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnInscripcion.Size = new System.Drawing.Size(200, 37);
@@ -274,29 +291,12 @@
             // pConsultar
             // 
             this.pConsultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(100)))), ((int)(((byte)(83)))));
-            this.pConsultar.Controls.Add(this.btnInscripciones);
             this.pConsultar.Controls.Add(this.btnUsuarios);
             this.pConsultar.Dock = System.Windows.Forms.DockStyle.Top;
             this.pConsultar.Location = new System.Drawing.Point(0, 137);
             this.pConsultar.Name = "pConsultar";
-            this.pConsultar.Size = new System.Drawing.Size(200, 45);
+            this.pConsultar.Size = new System.Drawing.Size(200, 26);
             this.pConsultar.TabIndex = 2;
-            // 
-            // btnInscripciones
-            // 
-            this.btnInscripciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(215)))), ((int)(((byte)(184)))));
-            this.btnInscripciones.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnInscripciones.FlatAppearance.BorderSize = 0;
-            this.btnInscripciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInscripciones.Location = new System.Drawing.Point(0, 23);
-            this.btnInscripciones.Name = "btnInscripciones";
-            this.btnInscripciones.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnInscripciones.Size = new System.Drawing.Size(200, 23);
-            this.btnInscripciones.TabIndex = 1;
-            this.btnInscripciones.Text = "Inscripciones";
-            this.btnInscripciones.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInscripciones.UseVisualStyleBackColor = false;
-            this.btnInscripciones.Click += new System.EventHandler(this.button3_Click);
             // 
             // btnUsuarios
             // 
@@ -307,7 +307,7 @@
             this.btnUsuarios.Location = new System.Drawing.Point(0, 0);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnUsuarios.Size = new System.Drawing.Size(200, 23);
+            this.btnUsuarios.Size = new System.Drawing.Size(200, 26);
             this.btnUsuarios.TabIndex = 0;
             this.btnUsuarios.Text = "Usuarios";
             this.btnUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -395,7 +395,6 @@
         private Panel panel2;
         private PictureBox pictureBox1;
         private Panel pConsultar;
-        private Button btnInscripciones;
         private Button btnUsuarios;
         private Panel pAyuda;
         private Button btnAcercaDe;
@@ -404,13 +403,14 @@
         private Button btnSalir;
         private Button btnArchivo;
         private Panel pSoporte;
-        private Button btnAnularInscripcion;
+        private Button btnModificarUsuario;
         private Button btnNuevoUsuario;
         private Button btnSoporte;
         private Panel pInscripcion;
         private Button btnInscribirse;
         private Button btnInscripcion;
         private PictureBox pictureBox2;
+        private Button btnAnularInscripcion;
     }
 }
 

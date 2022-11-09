@@ -33,12 +33,7 @@
             this.ColNombreCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColDireccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColCelular = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnConsultar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtApellido = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLegajo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,10 +45,10 @@
             this.ColNombreCompleto,
             this.ColDireccion,
             this.ColCelular});
-            this.dgvLegajo.Location = new System.Drawing.Point(12, 62);
+            this.dgvLegajo.Location = new System.Drawing.Point(12, 12);
             this.dgvLegajo.Name = "dgvLegajo";
             this.dgvLegajo.RowTemplate.Height = 25;
-            this.dgvLegajo.Size = new System.Drawing.Size(481, 179);
+            this.dgvLegajo.Size = new System.Drawing.Size(481, 229);
             this.dgvLegajo.TabIndex = 1;
             // 
             // ColLegajo
@@ -84,16 +79,6 @@
             this.ColCelular.Name = "ColCelular";
             this.ColCelular.ReadOnly = true;
             // 
-            // btnConsultar
-            // 
-            this.btnConsultar.Location = new System.Drawing.Point(418, 33);
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(75, 23);
-            this.btnConsultar.TabIndex = 6;
-            this.btnConsultar.Text = "Consultar";
-            this.btnConsultar.UseVisualStyleBackColor = true;
-            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
-            // 
             // btnSalir
             // 
             this.btnSalir.Location = new System.Drawing.Point(12, 247);
@@ -104,69 +89,28 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // txtNombre
-            // 
-            this.txtNombre.Location = new System.Drawing.Point(268, 30);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(100, 23);
-            this.txtNombre.TabIndex = 8;
-            // 
-            // txtApellido
-            // 
-            this.txtApellido.Location = new System.Drawing.Point(78, 31);
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(100, 23);
-            this.txtApellido.TabIndex = 9;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 15);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Nombre:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(208, 33);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 15);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Apellido:";
-            // 
             // ConsultarUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(517, 282);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtApellido);
-            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.dgvLegajo);
+            this.MaximumSize = new System.Drawing.Size(533, 321);
             this.Name = "ConsultarUsuarios";
             this.Text = "ConsultarUsuarios";
+            this.Load += new System.EventHandler(this.ConsultarUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLegajo)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
         private DataGridView dgvLegajo;
-        private Button btnConsultar;
         private DataGridViewTextBoxColumn ColLegajo;
         private DataGridViewTextBoxColumn ColNombreCompleto;
         private DataGridViewTextBoxColumn ColDireccion;
         private DataGridViewTextBoxColumn ColCelular;
         private Button btnSalir;
-        private TextBox txtNombre;
-        private TextBox txtApellido;
-        private Label label1;
-        private Label label2;
     }
 }

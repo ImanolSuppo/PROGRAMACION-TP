@@ -1,5 +1,6 @@
 ﻿using SistemaAcademico.datos;
 using SistemaAcademicoForm.Formularios;
+using SistemaAcademicoReport;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -75,10 +76,6 @@ namespace SistemaAcademicoForm
                 pArchivo.Visible = false; 
         }
 
-        //metodo abrir formularios en panel
-        private void AbrirFormEnPanel()
-
-
         private void MostrarSubMenu (Panel subMenu)
         {
             if(subMenu.Visible == false)
@@ -135,8 +132,8 @@ namespace SistemaAcademicoForm
 
         private void btnAnularInscripcion_Click(object sender, EventArgs e)
         {
-            BajaInscripcion bajaInscripcion = new BajaInscripcion();
-            bajaInscripcion.ShowDialog();
+            ModificarAlumno modificar = new ModificarAlumno();
+            modificar.ShowDialog();
         }
 
         private void btnCarreras_Click_1(object sender, EventArgs e)
@@ -153,6 +150,12 @@ namespace SistemaAcademicoForm
         private void pictureBox2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAnularInscripcion_Click_1(object sender, EventArgs e)
+        {
+            BajaInscripcion bajaInscripcion = new BajaInscripcion();
+            bajaInscripcion.ShowDialog();
         }
     }
 }

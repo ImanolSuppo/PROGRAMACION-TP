@@ -42,15 +42,15 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
@@ -87,11 +87,11 @@
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
@@ -124,7 +124,7 @@
             // 
             this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox5.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pictureBox5.Image = global::SistemaAcademicoForm.Properties.Resources.fotoIma;
+            this.pictureBox5.Image = global::SistemaAcademicoForm.Properties.Resources.fotoFranco;
             this.pictureBox5.Location = new System.Drawing.Point(31, 10);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(88, 80);
@@ -260,27 +260,53 @@
             this.panel6.Controls.Add(this.label6);
             this.panel6.Location = new System.Drawing.Point(202, 346);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(275, 132);
+            this.panel6.Size = new System.Drawing.Size(275, 140);
             this.panel6.TabIndex = 12;
             // 
-            // label6
+            // pictureBox3
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(35, 56);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(113, 15);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "+54 9 35148 53-2367";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            this.pictureBox3.Image = global::SistemaAcademicoForm.Properties.Resources.AcercaDe;
+            this.pictureBox3.Location = new System.Drawing.Point(7, 12);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(20, 19);
+            this.pictureBox3.TabIndex = 8;
+            this.pictureBox3.TabStop = false;
             // 
-            // label7
+            // pictureBox9
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(37, 102);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(112, 15);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Cuenta de Linkedin:";
+            this.pictureBox9.Image = global::SistemaAcademicoForm.Properties.Resources.IconWhatsApp;
+            this.pictureBox9.Location = new System.Drawing.Point(7, 52);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(18, 19);
+            this.pictureBox9.TabIndex = 7;
+            this.pictureBox9.TabStop = false;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::SistemaAcademicoForm.Properties.Resources.Email;
+            this.pictureBox8.Location = new System.Drawing.Point(7, 81);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(22, 15);
+            this.pictureBox8.TabIndex = 6;
+            this.pictureBox8.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::SistemaAcademicoForm.Properties.Resources.Linkedin;
+            this.pictureBox4.Location = new System.Drawing.Point(7, 102);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(18, 19);
+            this.pictureBox4.TabIndex = 5;
+            this.pictureBox4.TabStop = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(37, 12);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(216, 30);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "Estudiante en Tecnicatura \r\nUniversitaria en Programación UTN FRC";
             // 
             // label8
             // 
@@ -291,14 +317,24 @@
             this.label8.TabIndex = 2;
             this.label8.Text = "correroelectronico@gmail.com";
             // 
-            // label9
+            // label7
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(37, 23);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(62, 15);
-            this.label9.TabIndex = 3;
-            this.label9.Text = "Acerca de:";
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(37, 102);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(161, 30);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "https://www.linkedin.com/in\r\n/camila-postillon-047846256";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(35, 52);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(113, 15);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "+54 9 35148 53-2367";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // pictureBox2
             // 
@@ -311,42 +347,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 15;
             this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::SistemaAcademicoForm.Properties.Resources.Linkedin;
-            this.pictureBox4.Location = new System.Drawing.Point(7, 102);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(18, 19);
-            this.pictureBox4.TabIndex = 5;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = global::SistemaAcademicoForm.Properties.Resources.Email;
-            this.pictureBox8.Location = new System.Drawing.Point(7, 81);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(22, 15);
-            this.pictureBox8.TabIndex = 6;
-            this.pictureBox8.TabStop = false;
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Image = global::SistemaAcademicoForm.Properties.Resources.IconWhatsApp;
-            this.pictureBox9.Location = new System.Drawing.Point(7, 52);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(18, 19);
-            this.pictureBox9.TabIndex = 7;
-            this.pictureBox9.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::SistemaAcademicoForm.Properties.Resources.AcercaDe;
-            this.pictureBox3.Location = new System.Drawing.Point(7, 23);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(20, 19);
-            this.pictureBox3.TabIndex = 8;
-            this.pictureBox3.TabStop = false;
             // 
             // panel8
             // 
@@ -362,13 +362,13 @@
             this.panel8.Controls.Add(this.label20);
             this.panel8.Location = new System.Drawing.Point(512, 346);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(275, 132);
+            this.panel8.Size = new System.Drawing.Size(275, 140);
             this.panel8.TabIndex = 16;
             // 
             // pictureBox10
             // 
             this.pictureBox10.Image = global::SistemaAcademicoForm.Properties.Resources.AcercaDe;
-            this.pictureBox10.Location = new System.Drawing.Point(7, 23);
+            this.pictureBox10.Location = new System.Drawing.Point(7, 12);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(20, 19);
             this.pictureBox10.TabIndex = 8;
@@ -404,11 +404,11 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(37, 23);
+            this.label17.Location = new System.Drawing.Point(37, 12);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(62, 15);
+            this.label17.Size = new System.Drawing.Size(222, 30);
             this.label17.TabIndex = 3;
-            this.label17.Text = "Acerca de:";
+            this.label17.Text = "Estudiante en Tecnicatura\r\nUniversitaria en Programaación UTN FRC";
             // 
             // label18
             // 
@@ -424,14 +424,14 @@
             this.label19.AutoSize = true;
             this.label19.Location = new System.Drawing.Point(28, 105);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(112, 15);
+            this.label19.Size = new System.Drawing.Size(198, 30);
             this.label19.TabIndex = 1;
-            this.label19.Text = "Cuenta de Linkedin:";
+            this.label19.Text = "www.linkedin.com/in/franco-lentini\r\n-7020ba23b";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(28, 56);
+            this.label20.Location = new System.Drawing.Point(28, 52);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(107, 15);
             this.label20.TabIndex = 0;
@@ -649,11 +649,11 @@
             this.panel5.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();

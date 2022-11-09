@@ -174,6 +174,11 @@ namespace SistemaAcademicoForm.Formularios
                 MessageBox.Show("El legajo debe ser un numero", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if (!await ExisteLegajo(Convert.ToInt32(txtLegajo.Text)))
+            {
+                MessageBox.Show("El legajo no existe", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             inscripcion.alumno.legajo = Convert.ToInt32(txtLegajo.Text); //validar que el legajo sea un numero
             inscripcion.fecha = dtpFecha.Value;
             inscripcion.curso = Convert.ToInt32(dupCurso.SelectedItem); //validar         
@@ -191,7 +196,14 @@ namespace SistemaAcademicoForm.Formularios
             else
                 MessageBox.Show("ERROR. No se pudo registrar la inscripcion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-
+        private async Task<bool> ExisteLegajo(int legajo)
+        {
+            string url = "http://localhost:5205/ConsultarLegajo?legajo=" + legajo;
+            var result = await ClientSingleton.GetInstance().GetAsync(url);
+            if (result.Equals("true"))
+                return true;
+            return false;
+        }
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 

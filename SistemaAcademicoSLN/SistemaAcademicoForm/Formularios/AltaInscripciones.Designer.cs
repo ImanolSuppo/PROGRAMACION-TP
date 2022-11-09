@@ -238,6 +238,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cboMateria);
             this.Controls.Add(this.cboCarreraa);
+            this.MaximumSize = new System.Drawing.Size(622, 380);
             this.Name = "AltaInscripciones";
             this.Text = "AltaInscripciones";
             this.Load += new System.EventHandler(this.AltaInscripciones_Load);

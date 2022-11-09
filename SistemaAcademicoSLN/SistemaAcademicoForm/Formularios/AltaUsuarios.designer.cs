@@ -47,9 +47,10 @@
             this.btnCrear = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblAlumno = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -224,7 +225,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.pictureBox2);
             this.groupBox1.Controls.Add(this.txtAltura);
             this.groupBox1.Controls.Add(this.txtCalle);
             this.groupBox1.Controls.Add(this.txtDoc);
@@ -251,15 +252,16 @@
             this.groupBox1.Text = "Nuevo Usuario";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // label9
+            // pictureBox2
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(321, 123);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(47, 15);
-            this.label9.TabIndex = 21;
-            this.label9.Text = "POSHO";
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox2.Image = global::SistemaAcademicoForm.Properties.Resources.LOGO2;
+            this.pictureBox2.Location = new System.Drawing.Point(299, 68);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(192, 144);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 8;
+            this.pictureBox2.TabStop = false;
             // 
             // lblAlumno
             // 
@@ -281,11 +283,13 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnCrear);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.MaximumSize = new System.Drawing.Size(556, 414);
             this.Name = "AltaUsuarios";
             this.Text = "AltaAlumno";
             this.Load += new System.EventHandler(this.AltaAlumno_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -313,6 +317,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblAlumno;
-        private Label label9;
+        private PictureBox pictureBox2;
     }
 }
