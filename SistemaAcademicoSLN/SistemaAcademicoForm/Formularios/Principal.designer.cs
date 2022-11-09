@@ -79,7 +79,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 507);
+            this.panel1.Size = new System.Drawing.Size(200, 481);
             this.panel1.TabIndex = 1;
             // 
             // pAyuda
@@ -106,6 +106,7 @@
             this.btnAcercaDe.Text = "Acerca de ";
             this.btnAcercaDe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAcercaDe.UseVisualStyleBackColor = false;
+            this.btnAcercaDe.Click += new System.EventHandler(this.btnAcercaDe_Click);
             // 
             // btnAyuda
             // 
@@ -353,12 +354,13 @@
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.Image = global::SistemaAcademicoForm.Properties.Resources.LOGO2;
-            this.pictureBox2.Location = new System.Drawing.Point(413, 156);
+            this.pictureBox2.Location = new System.Drawing.Point(443, 143);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(192, 144);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // Principal
             // 
@@ -367,7 +369,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(216)))), ((int)(((byte)(178)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(810, 507);
+            this.ClientSize = new System.Drawing.Size(871, 481);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);

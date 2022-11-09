@@ -75,6 +75,10 @@ namespace SistemaAcademicoForm
                 pArchivo.Visible = false; 
         }
 
+        //metodo abrir formularios en panel
+        private void AbrirFormEnPanel()
+
+
         private void MostrarSubMenu (Panel subMenu)
         {
             if(subMenu.Visible == false)
@@ -136,6 +140,17 @@ namespace SistemaAcademicoForm
         }
 
         private void btnCarreras_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAcercaDe_Click(object sender, EventArgs e)
+        {
+            AcercaDe acercaDe = new AcercaDe();
+            acercaDe.ShowDialog();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
         {
 
         }
