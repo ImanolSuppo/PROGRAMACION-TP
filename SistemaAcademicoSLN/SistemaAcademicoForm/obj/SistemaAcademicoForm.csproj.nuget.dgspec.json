@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\imasu\\Desktop\\GIT progII\\PROGRAMACION-TP\\PROGRAMACION-TP-main\\SistemaAcademicoSLN\\SistemaAcademicoForm\\SistemaAcademicoForm.csproj": {}
+    "C:\\Users\\imasu\\Desktop\\GIT progII\\PROGRAMACION-TP\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademicoForm\\SistemaAcademicoForm.csproj": {}
   },
   "projects": {
-    "C:\\Users\\imasu\\Desktop\\GIT progII\\PROGRAMACION-TP\\PROGRAMACION-TP-main\\SistemaAcademicoSLN\\SistemaAcademicoForm\\SistemaAcademicoForm.csproj": {
+    "C:\\Users\\imasu\\Desktop\\GIT progII\\PROGRAMACION-TP\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademicoForm\\SistemaAcademicoForm.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\imasu\\Desktop\\GIT progII\\PROGRAMACION-TP\\PROGRAMACION-TP-main\\SistemaAcademicoSLN\\SistemaAcademicoForm\\SistemaAcademicoForm.csproj",
+        "projectUniqueName": "C:\\Users\\imasu\\Desktop\\GIT progII\\PROGRAMACION-TP\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademicoForm\\SistemaAcademicoForm.csproj",
         "projectName": "SistemaAcademicoForm",
-        "projectPath": "C:\\Users\\imasu\\Desktop\\GIT progII\\PROGRAMACION-TP\\PROGRAMACION-TP-main\\SistemaAcademicoSLN\\SistemaAcademicoForm\\SistemaAcademicoForm.csproj",
+        "projectPath": "C:\\Users\\imasu\\Desktop\\GIT progII\\PROGRAMACION-TP\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademicoForm\\SistemaAcademicoForm.csproj",
         "packagesPath": "C:\\Users\\imasu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\imasu\\Desktop\\GIT progII\\PROGRAMACION-TP\\PROGRAMACION-TP-main\\SistemaAcademicoSLN\\SistemaAcademicoForm\\obj\\",
+        "outputPath": "C:\\Users\\imasu\\Desktop\\GIT progII\\PROGRAMACION-TP\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademicoForm\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,11 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "C:\\Users\\imasu\\Desktop\\GIT progII\\PROGRAMACION-TP\\PROGRAMACION-TP-main\\SistemaAcademicoSLN\\SistemaAcademico\\SistemaAcademico.csproj": {
-                "projectPath": "C:\\Users\\imasu\\Desktop\\GIT progII\\PROGRAMACION-TP\\PROGRAMACION-TP-main\\SistemaAcademicoSLN\\SistemaAcademico\\SistemaAcademico.csproj"
+              "C:\\Users\\imasu\\Desktop\\GIT progII\\PROGRAMACION-TP\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademicoReport\\SistemaAcademicoReport.csproj": {
+                "projectPath": "C:\\Users\\imasu\\Desktop\\GIT progII\\PROGRAMACION-TP\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademicoReport\\SistemaAcademicoReport.csproj"
+              },
+              "C:\\Users\\imasu\\Desktop\\GIT progII\\PROGRAMACION-TP\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademico\\SistemaAcademico.csproj": {
+                "projectPath": "C:\\Users\\imasu\\Desktop\\GIT progII\\PROGRAMACION-TP\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademico\\SistemaAcademico.csproj"
               }
             }
           }
@@ -48,6 +51,10 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "dependencies": {
+            "Microsoft.ReportingServices.ReportViewerControl.Winforms": {
+              "target": "Package",
+              "version": "[140.340.80, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.1, )"
@@ -76,14 +83,29 @@
         }
       }
     },
-    "C:\\Users\\imasu\\Desktop\\GIT progII\\PROGRAMACION-TP\\PROGRAMACION-TP-main\\SistemaAcademicoSLN\\SistemaAcademico\\SistemaAcademico.csproj": {
+    "C:\\Users\\imasu\\Desktop\\GIT progII\\PROGRAMACION-TP\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademicoReport\\SistemaAcademicoReport.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\imasu\\Desktop\\GIT progII\\PROGRAMACION-TP\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademicoReport\\SistemaAcademicoReport.csproj",
+        "projectName": "SistemaAcademicoReport",
+        "projectPath": "C:\\Users\\imasu\\Desktop\\GIT progII\\PROGRAMACION-TP\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademicoReport\\SistemaAcademicoReport.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "C:\\Users\\imasu\\Desktop\\GIT progII\\PROGRAMACION-TP\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademico\\SistemaAcademico.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\imasu\\Desktop\\GIT progII\\PROGRAMACION-TP\\PROGRAMACION-TP-main\\SistemaAcademicoSLN\\SistemaAcademico\\SistemaAcademico.csproj",
+        "projectUniqueName": "C:\\Users\\imasu\\Desktop\\GIT progII\\PROGRAMACION-TP\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademico\\SistemaAcademico.csproj",
         "projectName": "SistemaAcademico",
-        "projectPath": "C:\\Users\\imasu\\Desktop\\GIT progII\\PROGRAMACION-TP\\PROGRAMACION-TP-main\\SistemaAcademicoSLN\\SistemaAcademico\\SistemaAcademico.csproj",
+        "projectPath": "C:\\Users\\imasu\\Desktop\\GIT progII\\PROGRAMACION-TP\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademico\\SistemaAcademico.csproj",
         "packagesPath": "C:\\Users\\imasu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\imasu\\Desktop\\GIT progII\\PROGRAMACION-TP\\PROGRAMACION-TP-main\\SistemaAcademicoSLN\\SistemaAcademico\\obj\\",
+        "outputPath": "C:\\Users\\imasu\\Desktop\\GIT progII\\PROGRAMACION-TP\\PROGRAMACION-TP\\SistemaAcademicoSLN\\SistemaAcademico\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
